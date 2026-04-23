@@ -255,8 +255,10 @@ class Reviewer:
     # ─── record attachment ─────────────────────────────────────────────────
 
     def attach_record(self, role_id: str, record: ReviewRecord) -> None:
-        """Write meta.review into the role's latest version YAML and refresh
-        the registry checksum (Phase 2.5 invariant)."""
+        """Write meta.review into the role's latest version YAML, mirror
+        verdict+score into the registry entry's meta.review (so callers can
+        filter by verdict without rescanning YAMLs), and refresh the registry
+        checksum (Phase 2.5 invariant)."""
         from ..utils.path_utils import role_id_to_parts
 
         entry = self.rm.registry_store.get_entry(role_id)
@@ -273,6 +275,11 @@ class Reviewer:
         self.rm.role_store.write_role(group, role_name, latest, data)
 
         self.rm._refresh_version_checksum(entry, latest)
+        entry["meta"]["review"] = {
+            "verdict": record.verdict,
+            "score": record.score,
+            "reviewed_at": record.reviewed_at,
+        }
         entry["meta"]["updated_at"] = _now_utc()
         self.rm.registry_store.put_entry(role_id, entry)
 

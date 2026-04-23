@@ -135,6 +135,32 @@ def test_fusion_empty_query_returns_empty():
     assert result["job"] == result["tech"] == result["specialty"] == []
 
 
+def test_fusion_verdict_filter_respected():
+    store = _InMemoryRegistryStore([
+        dict(_entry("language.python_a", "language", "Python A", "Python A",
+                    ["language", "python"]),
+             **{}) | {"meta": {
+                 **_entry("language.python_a", "language", "Python A", "Python A",
+                          ["language", "python"])["meta"],
+                 "review": {"verdict": "approved", "score": 5, "reviewed_at": ""},
+             }},
+        dict(_entry("language.python_b", "language", "Python B", "Python B",
+                    ["language", "python"]),
+             **{}) | {"meta": {
+                 **_entry("language.python_b", "language", "Python B", "Python B",
+                          ["language", "python"])["meta"],
+                 "review": {"verdict": "needs_work", "score": 2, "reviewed_at": ""},
+             }},
+    ])
+    fse = FusionSearchEngine(store)
+    result = fse.find("Python", verdict_filter="approved")
+    ids = [h.entry.role_id for h in result["tech"]]
+    assert ids == ["language.python_a"]
+    # No filter => both show up.
+    result = fse.find("Python")
+    assert len(result["tech"]) == 2
+
+
 def test_fusion_hit_to_dict_serializable():
     store = _InMemoryRegistryStore([
         _entry("language.python", "language",

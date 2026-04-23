@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "rolecore"
-version = "0.1.0"
+version = "0.1.1"
 description = "Role asset management — YAML-based role definitions with a five-level governance pipeline, 10-item official gate, and three-axis fusion search."
 readme = "README.md"
 requires-python = ">=3.10"

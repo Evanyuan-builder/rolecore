@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v0.1.1 — 2026-04-23
+
+Technical-debt + ergonomics pass.
+
+- `find --verdict {approved,needs_work,rejected}` — filter fusion search results by review verdict; complements `--status`
+- Reviewer now mirrors `verdict + score + reviewed_at` into the registry entry's `meta.review` on attach, so verdict filtering works without rescanning YAMLs
+- `registry resync` extended to pull review verdict from YAML back into the registry (for drift recovery)
+- Internal: `build_parser` and `cmd_review_batch` split into small helpers — no CLI surface change
+- Tests: 39 → 42
+
 ## v0.1.0 — 2026-04-23
 
 Initial public showcase release.

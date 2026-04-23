@@ -185,6 +185,7 @@ def cmd_find(args):
         query=args.query,
         top_k_per_axis=args.top_k,
         status_filter=args.status,
+        verdict_filter=getattr(args, "verdict", None),
     )
 
     if args.json:
@@ -498,35 +499,22 @@ def cmd_review_apply(args):
     print(f"Review attached to '{args.id}'")
 
 
-def cmd_review_batch(args):
-    """Batch review with skip-if-reviewed. Idempotent + resumable."""
-    import time
-    from collections import Counter
-    from rolecore.core.reviewer import Reviewer, get_review_record
+def _select_batch_targets(args):
+    """Return (work_ids, skip_counts). Filters by status/group/already-reviewed."""
+    from rolecore.core.reviewer import get_review_record
     from rolecore import _REGISTRY_PATH, _ROLES_DIR
     from rolecore.storage.registry_store import RegistryStore
     from rolecore.storage.role_store import RoleStore
     from rolecore.utils.path_utils import role_id_to_parts
-
-    rm, _, _ = _engine()
-    backend = args.backend or "ollama"
-    default_model = "qwen3:8b" if backend == "ollama" else "claude-opus-4-7"
-    model = args.model or default_model
-
-    r = Reviewer(rm, model=model, backend=backend,
-                 ollama_url=args.ollama_url or "http://localhost:11434")
 
     rs = RegistryStore(_REGISTRY_PATH)
     role_store = RoleStore(_ROLES_DIR)
     data = rs.load()
 
     work = []
-    already_reviewed = 0
-    wrong_status = 0
-    wrong_group = 0
+    already_reviewed = wrong_status = wrong_group = 0
     for role_id, entry in sorted(data["roles"].items()):
-        status = entry["meta"].get("status")
-        if args.status and status != args.status:
+        if args.status and entry["meta"].get("status") != args.status:
             wrong_status += 1
             continue
         group, role_name = role_id_to_parts(role_id)
@@ -534,46 +522,45 @@ def cmd_review_batch(args):
             wrong_group += 1
             continue
         role_data = role_store.read_role(group, role_name, entry["latest_version"])
-        existing = get_review_record(role_data)
-        if existing and not args.force_reattach:
+        if get_review_record(role_data) and not args.force_reattach:
             already_reviewed += 1
             continue
         work.append(role_id)
+    return work, {"already_reviewed": already_reviewed,
+                  "wrong_status": wrong_status,
+                  "wrong_group": wrong_group}
 
+
+def _print_batch_plan(args, work, skips, backend, model):
     total = len(work)
-    filters = f"status={args.status}"
-    if args.group:
-        filters += f" group={args.group}"
+    filters = f"status={args.status}" + (f" group={args.group}" if args.group else "")
     print(f"Batch plan: {total} role(s) to review [{filters}]")
-    print(f"  already reviewed: {already_reviewed}"
-          + (f" (will reattach: use --force-reattach)" if already_reviewed else ""))
-    if wrong_status:
-        print(f"  skipped (status filter): {wrong_status}")
-    if wrong_group:
-        print(f"  skipped (group filter): {wrong_group}")
+    reattach_hint = " (will reattach: use --force-reattach)" if skips["already_reviewed"] else ""
+    print(f"  already reviewed: {skips['already_reviewed']}" + reattach_hint)
+    if skips["wrong_status"]:
+        print(f"  skipped (status filter): {skips['wrong_status']}")
+    if skips["wrong_group"]:
+        print(f"  skipped (group filter): {skips['wrong_group']}")
     print(f"Backend: {backend} / model: {model}")
     print(flush=True)
 
-    if not total:
-        print("Nothing to do.")
-        return
-    if args.dry_run:
-        for role_id in work[:50]:
-            print(f"  [dry] {role_id}")
-        if len(work) > 50:
-            print(f"  ... and {len(work) - 50} more")
-        return
+
+def _execute_batch(reviewer, work):
+    """Run reviewer live across work list, printing per-role progress. Returns (verdicts, scores, errors, elapsed_total)."""
+    import time
+    from collections import Counter
 
     verdicts = Counter()
     scores = Counter()
     errors = []
+    total = len(work)
     start = time.time()
 
     for i, role_id in enumerate(work, 1):
         t0 = time.time()
         try:
-            record = r.run_live(role_id)
-            r.attach_record(role_id, record)
+            record = reviewer.run_live(role_id)
+            reviewer.attach_record(role_id, record)
             elapsed = time.time() - t0
             verdicts[record.verdict] += 1
             scores[record.score] += 1
@@ -586,16 +573,19 @@ def cmd_review_batch(args):
             print(f"  [{i:>4}/{total}] {role_id:<55} ERROR ({elapsed:.1f}s): {str(e)[:80]}",
                   flush=True)
 
-    total_time = time.time() - start
+    return verdicts, scores, errors, time.time() - start
+
+
+def _print_batch_summary(verdicts, scores, errors, total, elapsed_total):
     print()
-    print(f"Done in {total_time/60:.1f} min ({total_time/max(total,1):.1f}s avg)")
-    print(f"Verdicts:")
+    print(f"Done in {elapsed_total/60:.1f} min ({elapsed_total/max(total,1):.1f}s avg)")
+    print("Verdicts:")
     for v in ("approved", "needs_work", "rejected"):
         n = verdicts.get(v, 0)
         pct = n / total * 100 if total else 0
         print(f"  {v:<11} {n:>4}  ({pct:.0f}%)")
     if scores:
-        print(f"Scores:")
+        print("Scores:")
         for s in sorted(scores.keys(), reverse=True):
             print(f"  {s}⭐  {scores[s]}")
     if errors:
@@ -604,6 +594,33 @@ def cmd_review_batch(args):
             print(f"  - {role_id}: {err}")
         if len(errors) > 20:
             print(f"  ... and {len(errors) - 20} more")
+
+
+def cmd_review_batch(args):
+    """Batch review with skip-if-reviewed. Idempotent + resumable."""
+    from rolecore.core.reviewer import Reviewer
+
+    rm, _, _ = _engine()
+    backend = args.backend or "ollama"
+    model = args.model or ("qwen3:8b" if backend == "ollama" else "claude-opus-4-7")
+    reviewer = Reviewer(rm, model=model, backend=backend,
+                        ollama_url=args.ollama_url or "http://localhost:11434")
+
+    work, skips = _select_batch_targets(args)
+    _print_batch_plan(args, work, skips, backend, model)
+
+    if not work:
+        print("Nothing to do.")
+        return
+    if args.dry_run:
+        for role_id in work[:50]:
+            print(f"  [dry] {role_id}")
+        if len(work) > 50:
+            print(f"  ... and {len(work) - 50} more")
+        return
+
+    verdicts, scores, errors, elapsed_total = _execute_batch(reviewer, work)
+    _print_batch_summary(verdicts, scores, errors, len(work), elapsed_total)
 
 
 def cmd_review_status(args):
@@ -657,16 +674,299 @@ def cmd_review_status(args):
             print(f"\nunreviewed (first 5): {', '.join(unreviewed[:5])}")
 
 
+# ─── upstream ──────────────────────────────────────────────────────────────────
+
+def _upstream_dir():
+    return os.path.join(os.path.dirname(os.path.abspath(__file__)), "upstream")
+
+
+def cmd_upstream_list(args):
+    from rolecore.upstream.catalog import scan_upstream
+    catalog = scan_upstream(_upstream_dir())
+    if args.group:
+        target = args.group.replace("-", "_")
+        catalog = [r for r in catalog if r["rc_group"] == target or r["group"] == args.group]
+    if not catalog:
+        print("No upstream roles found.")
+        return
+    print(f"{'Role ID':<55} {'Name'}")
+    print("-" * 80)
+    for r in catalog:
+        print(f"{r['role_id']:<55} {r['name_en']}")
+    print(f"\nTotal: {len(catalog)}")
+
+
+def cmd_upstream_info(args):
+    from rolecore.upstream.catalog import scan_upstream
+    catalog = scan_upstream(_upstream_dir())
+    matches = [r for r in catalog if r["role_id"] == args.id]
+    if not matches:
+        print(f"Not found: {args.id}", file=sys.stderr)
+        sys.exit(1)
+    r = matches[0]
+    print(f"Role ID:     {r['role_id']}")
+    print(f"Name:        {r['name_en']}")
+    print(f"Group:       {r['group']} → {r['rc_group']}")
+    print(f"Domain:      {r['domain']}")
+    print(f"File:        {r['file_path']}")
+    print(f"Description: {r['description']}")
+    if r['vibe']:
+        print(f"Vibe:        {r['vibe']}")
+
+
+def cmd_upstream_import(args):
+    from rolecore.upstream.catalog import scan_upstream
+    from rolecore.upstream.importer import md_to_rolecore_for_entry
+    rm, _, _ = _engine()
+
+    catalog = scan_upstream(_upstream_dir())
+    matches = [r for r in catalog if r["role_id"] == args.id]
+    if not matches:
+        print(f"Not found in upstream: '{args.id}'", file=sys.stderr)
+        sys.exit(1)
+
+    entry = matches[0]
+    role_data = md_to_rolecore_for_entry(entry)
+
+    # Check if already registered
+    from rolecore import _REGISTRY_PATH
+    from rolecore.storage.registry_store import RegistryStore
+    rs = RegistryStore(_REGISTRY_PATH)
+    existing = rs.get_entry(args.id)
+
+    if existing:
+        if not args.force:
+            print(f"Already registered: '{args.id}'. Use --force to re-import as new version.")
+            sys.exit(1)
+        role = rm.update_role(args.id, role_data, description="Re-imported from upstream")
+        print(f"Updated: {role.role_id} → v{role.version}")
+    else:
+        role = rm.create_role(role_data)
+        print(f"Imported: {role.role_id} v{role.version}  ({entry['name_en']})")
+
+
+def cmd_upstream_reimport(args):
+    """Source-aware reimport of a single role: only overwrites non-enhanced fields."""
+    from rolecore.upstream.catalog import scan_upstream, find_role
+    from rolecore.upstream.reimporter import reimport_role
+    from rolecore import _REGISTRY_PATH, _ROLES_DIR
+    from rolecore.storage.registry_store import RegistryStore
+    from rolecore.storage.role_store import RoleStore
+    from rolecore.utils.path_utils import role_id_to_parts
+
+    rm, _, _ = _engine()
+    rs = RegistryStore(_REGISTRY_PATH)
+
+    entry_dict = rs.get_entry(args.id)
+    if not entry_dict:
+        print(f"Not registered: '{args.id}'. Use 'upstream import' for first-time import.", file=sys.stderr)
+        sys.exit(1)
+
+    upstream_entry = find_role(_upstream_dir(), args.id)
+    group, role_name = role_id_to_parts(args.id)
+
+    role_store = RoleStore(_ROLES_DIR)
+    latest_ver = entry_dict["latest_version"]
+    existing_data = role_store.read_role(group, role_name, latest_ver)
+
+    merged, changed = reimport_role(
+        upstream_file=upstream_entry["file_path"],
+        group=upstream_entry["group"],
+        role_name=upstream_entry["role_name"],
+        existing_data=existing_data,
+        force=args.force,
+    )
+
+    if not changed:
+        print(f"Up-to-date: '{args.id}' — upstream unchanged (use --force to override)")
+        return
+
+    enhanced = merged.get("meta", {}).get("source", {}).get("enhanced_fields", [])
+    role = rm.update_role(args.id, merged, description="Source-aware reimport from upstream")
+    print(f"Reimported: {role.role_id} → v{role.version}")
+    if enhanced:
+        print(f"  Protected fields (not overwritten): {', '.join(enhanced)}")
+
+
+def cmd_upstream_drift(args):
+    """Read-only drift report: upstream vs registry. Cron-friendly."""
+    from rolecore.upstream.drift import scan_drift
+    from rolecore import _REGISTRY_PATH, _ROLES_DIR
+    from rolecore.storage.registry_store import RegistryStore
+    from rolecore.storage.role_store import RoleStore
+
+    rs = RegistryStore(_REGISTRY_PATH)
+    role_store = RoleStore(_ROLES_DIR)
+    report = scan_drift(_upstream_dir(), role_store, rs)
+
+    if args.json:
+        print(json.dumps(report.to_dict(), ensure_ascii=False, indent=2))
+    else:
+        print(f"Drift report — {report.up_to_date_count} up-to-date, "
+              f"{len(report.drifted)} drifted, "
+              f"{len(report.missing_upstream)} missing, "
+              f"{len(report.unregistered)} unregistered, "
+              f"{len(report.errors)} errors")
+
+        if report.drifted:
+            print(f"\n📦 Drifted ({len(report.drifted)}) — upstream changed since import:")
+            for d in report.drifted[: args.limit]:
+                protected = f" [protected: {', '.join(d.enhanced_fields)}]" if d.enhanced_fields else ""
+                print(f"  • {d.role_id}{protected}")
+            if len(report.drifted) > args.limit:
+                print(f"  … and {len(report.drifted) - args.limit} more")
+
+        if report.missing_upstream:
+            print(f"\n❓ Missing upstream ({len(report.missing_upstream)}) — registered but no upstream file:")
+            for d in report.missing_upstream[: args.limit]:
+                print(f"  • {d.role_id}  ({d.upstream_repo})")
+            if len(report.missing_upstream) > args.limit:
+                print(f"  … and {len(report.missing_upstream) - args.limit} more")
+
+        if report.unregistered:
+            print(f"\n➕ Unregistered ({len(report.unregistered)}) — in catalog but not imported:")
+            for d in report.unregistered[: args.limit]:
+                print(f"  • {d.role_id}  ({d.upstream_repo})")
+            if len(report.unregistered) > args.limit:
+                print(f"  … and {len(report.unregistered) - args.limit} more")
+
+        if report.errors:
+            print(f"\n⚠️  Errors ({len(report.errors)}):")
+            for e in report.errors[: args.limit]:
+                print(f"  • {e}")
+
+    # Non-zero exit when drift is present so cron can alert.
+    if report.errors:
+        sys.exit(1)
+    if report.has_drift and args.fail_on_drift:
+        sys.exit(3)
+
+
+def cmd_upstream_reimport_all(args):
+    """Source-aware batch reimport. Skips roles with unchanged upstream files."""
+    from rolecore.upstream.catalog import scan_upstream
+    from rolecore.upstream.reimporter import reimport_role
+    from rolecore import _REGISTRY_PATH, _ROLES_DIR
+    from rolecore.storage.registry_store import RegistryStore
+    from rolecore.storage.role_store import RoleStore
+    from rolecore.utils.path_utils import role_id_to_parts
+
+    rm, _, _ = _engine()
+    rs = RegistryStore(_REGISTRY_PATH)
+    role_store = RoleStore(_ROLES_DIR)
+
+    catalog = scan_upstream(_upstream_dir())
+    if args.group:
+        target = args.group.replace("-", "_")
+        catalog = [r for r in catalog if r["rc_group"] == target or r["group"] == args.group]
+
+    if not catalog:
+        print("No roles to reimport.")
+        return
+
+    print(f"{'[dry-run] ' if args.dry_run else ''}Checking {len(catalog)} upstream role(s)...\n")
+
+    updated = skipped = no_change = failed = 0
+    for entry in catalog:
+        role_id = entry["role_id"]
+        try:
+            existing_entry = rs.get_entry(role_id)
+            if not existing_entry:
+                print(f"  [skip]  {role_id:<55} not registered (use 'upstream import' first)")
+                skipped += 1
+                continue
+
+            group, role_name = role_id_to_parts(role_id)
+            existing_data = role_store.read_role(group, role_name, existing_entry["latest_version"])
+
+            merged, changed = reimport_role(
+                upstream_file=entry["file_path"],
+                group=entry["group"],
+                role_name=entry["role_name"],
+                existing_data=existing_data,
+                force=args.force,
+            )
+
+            if not changed:
+                print(f"  [same]  {role_id}")
+                no_change += 1
+                continue
+
+            if args.dry_run:
+                enhanced = merged.get("meta", {}).get("source", {}).get("enhanced_fields", [])
+                note = f"  protected: {enhanced}" if enhanced else ""
+                print(f"  [dry]   {role_id}{note}")
+                updated += 1
+                continue
+
+            enhanced = merged.get("meta", {}).get("source", {}).get("enhanced_fields", [])
+            role = rm.update_role(role_id, merged, description="Source-aware reimport from upstream")
+            note = f"  [{', '.join(enhanced)}]" if enhanced else ""
+            print(f"  [upd]   {role_id} → v{role.version}{note}")
+            updated += 1
+
+        except Exception as e:
+            print(f"  [ERR]   {role_id}: {e}")
+            failed += 1
+
+    print(f"\nDone — {updated} updated, {no_change} unchanged, {skipped} not registered, {failed} failed")
+
+
+def cmd_upstream_import_all(args):
+    from rolecore.upstream.catalog import scan_upstream
+    from rolecore.upstream.importer import md_to_rolecore_for_entry
+    from rolecore import _REGISTRY_PATH
+    from rolecore.storage.registry_store import RegistryStore
+
+    rm, _, _ = _engine()
+    rs = RegistryStore(_REGISTRY_PATH)
+    catalog = scan_upstream(_upstream_dir())
+
+    if args.group:
+        target = args.group.replace("-", "_")
+        catalog = [r for r in catalog if r["rc_group"] == target or r["group"] == args.group]
+
+    if not catalog:
+        print("No roles to import.")
+        return
+
+    print(f"{'Importing' if not args.dry_run else 'Dry-run'}: {len(catalog)} role(s)\n")
+
+    ok = skipped = failed = 0
+    for entry in catalog:
+        role_id = entry["role_id"]
+        try:
+            role_data = md_to_rolecore_for_entry(entry)
+
+            if args.dry_run:
+                print(f"  [dry] {role_id:<55} {entry['name_en']}")
+                ok += 1
+                continue
+
+            existing = rs.get_entry(role_id)
+            if existing and not args.force:
+                print(f"  [skip] {role_id}")
+                skipped += 1
+                continue
+
+            if existing:
+                rm.update_role(role_id, role_data, description="Re-imported from upstream")
+                print(f"  [upd]  {role_id}")
+            else:
+                rm.create_role(role_data)
+                print(f"  [new]  {role_id}")
+            ok += 1
+
+        except Exception as e:
+            print(f"  [ERR]  {role_id}: {e}")
+            failed += 1
+
+    print(f"\nDone — {ok} imported, {skipped} skipped, {failed} failed")
+
+
 # ─── main ──────────────────────────────────────────────────────────────────────
 
-def build_parser():
-    parser = argparse.ArgumentParser(
-        prog="rolecore",
-        description="RoleCore — 岗位资产管理系统",
-    )
-    sub = parser.add_subparsers(dest="command")
-
-    # role
+def _add_role_subcommands(sub):
     rp = sub.add_parser("role", help="角色 CRUD")
     rsub = rp.add_subparsers(dest="subcommand")
 
@@ -726,7 +1026,8 @@ def build_parser():
     r_ver = rsub.add_parser("versions", help="查看所有版本")
     r_ver.add_argument("--id", required=True)
 
-    # search
+
+def _add_search_subcommands(sub):
     sp = sub.add_parser("search", help="检索角色")
     sp.add_argument("--group")
     sp.add_argument("--tags")
@@ -736,14 +1037,18 @@ def build_parser():
     sp.add_argument("--list-groups", action="store_true")
     sp.add_argument("--list-tags", action="store_true")
 
-    # find (three-axis fusion search)
+
+def _add_find_subcommand(sub):
     fp = sub.add_parser("find", help="三维融合检索（岗位 × 技术栈 × 专业特长）")
     fp.add_argument("query", help="自然语言查询，如 'Python 后端 高级开发'")
     fp.add_argument("--top-k", type=int, default=5, help="每个维度返回的候选数（默认 5）")
     fp.add_argument("--status", default="official", help="状态过滤（默认 official，传 '' 取消过滤）")
+    fp.add_argument("--verdict", choices=["approved", "needs_work", "rejected"],
+                    help="按 review verdict 过滤（需先跑过 review）")
     fp.add_argument("--json", action="store_true", help="以 JSON 输出")
 
-    # export
+
+def _add_export_subcommand(sub):
     ep = sub.add_parser("export", help="导出角色")
     ep.add_argument("--id")
     ep.add_argument("--group")
@@ -751,7 +1056,8 @@ def build_parser():
     ep.add_argument("--format", choices=["prompt", "json", "markdown"], default="prompt")
     ep.add_argument("--output")
 
-    # assemble
+
+def _add_assemble_subcommand(sub):
     ap = sub.add_parser("assemble", help="装配执行上下文")
     ap.add_argument("--id", required=True)
     ap.add_argument("--task", required=True)
@@ -761,7 +1067,8 @@ def build_parser():
     ap.add_argument("--format", choices=["prompt", "json", "markdown"], default="prompt")
     ap.add_argument("--output")
 
-    # registry
+
+def _add_registry_subcommands(sub):
     regp = sub.add_parser("registry", help="注册表维护")
     regsub = regp.add_subparsers(dest="subcommand")
     regsub.add_parser("stats", help="统计信息")
@@ -769,9 +1076,10 @@ def build_parser():
     reg_dump = regsub.add_parser("dump", help="导出注册表")
     reg_dump.add_argument("--format", choices=["json", "yaml"], default="json")
     regsub.add_parser("verify", help="校验文件一致性")
-    regsub.add_parser("resync", help="从 YAML 重新同步 registry 的 name_cn/name_en/domain/tags/status")
+    regsub.add_parser("resync", help="从 YAML 重新同步 registry 的 name_cn/name_en/domain/tags/status/review")
 
-    # review (LLM-assisted quality review)
+
+def _add_review_subcommands(sub):
     rvp = sub.add_parser("review", help="LLM 质量复核（curated gate）")
     rvsub = rvp.add_subparsers(dest="subcommand")
 
@@ -811,6 +1119,56 @@ def build_parser():
     rv_status.add_argument("--status", help="只看指定 status 的角色（如 official）")
     rv_status.add_argument("--show-samples", action="store_true", help="显示几个样例 role_id")
 
+
+def _add_upstream_subcommands(sub):
+    up = sub.add_parser("upstream", help="从 agency-agents 导入角色")
+    upsub = up.add_subparsers(dest="subcommand")
+
+    up_list = upsub.add_parser("list", help="列出所有可用 upstream 角色")
+    up_list.add_argument("--group", help="按 group 过滤")
+
+    up_info = upsub.add_parser("info", help="查看 upstream 角色详情（不导入）")
+    up_info.add_argument("--id", required=True)
+
+    up_import = upsub.add_parser("import", help="导入单个角色")
+    up_import.add_argument("--id", required=True)
+    up_import.add_argument("--force", action="store_true", help="已注册时强制更新为新版本")
+
+    up_all = upsub.add_parser("import-all", help="批量导入所有角色（首次，status=raw_imported）")
+    up_all.add_argument("--group", help="只导入指定 group")
+    up_all.add_argument("--force", action="store_true", help="已注册的角色也强制更新")
+    up_all.add_argument("--dry-run", action="store_true", help="只预览，不实际写入")
+
+    up_reimport = upsub.add_parser("reimport", help="source-aware 重导入单个角色（保护增强字段）")
+    up_reimport.add_argument("--id", required=True)
+    up_reimport.add_argument("--force", action="store_true", help="即使 upstream 未变也强制重导入")
+
+    up_reimport_all = upsub.add_parser("reimport-all", help="source-aware 批量重导入（跳过未变更）")
+    up_reimport_all.add_argument("--group", help="只处理指定 group")
+    up_reimport_all.add_argument("--force", action="store_true")
+    up_reimport_all.add_argument("--dry-run", action="store_true", help="只预览，不实际写入")
+
+    up_drift = upsub.add_parser("drift", help="只读漂移报告（cron 友好；drifted / missing / unregistered）")
+    up_drift.add_argument("--json", action="store_true", help="机读 JSON 输出")
+    up_drift.add_argument("--limit", type=int, default=20, help="每类最多显示的条目数（默认 20）")
+    up_drift.add_argument("--fail-on-drift", action="store_true",
+                          help="有漂移时 exit 3（便于 cron 监控触发告警）")
+
+
+def build_parser():
+    parser = argparse.ArgumentParser(
+        prog="rolecore",
+        description="RoleCore — 岗位资产管理系统",
+    )
+    sub = parser.add_subparsers(dest="command")
+    _add_role_subcommands(sub)
+    _add_search_subcommands(sub)
+    _add_find_subcommand(sub)
+    _add_export_subcommand(sub)
+    _add_assemble_subcommand(sub)
+    _add_registry_subcommands(sub)
+    _add_review_subcommands(sub)
+    _add_upstream_subcommands(sub)
     return parser
 
 
@@ -846,6 +1204,13 @@ def main():
         ("review", "apply"): cmd_review_apply,
         ("review", "batch"): cmd_review_batch,
         ("review", "status"): cmd_review_status,
+        ("upstream", "list"): cmd_upstream_list,
+        ("upstream", "info"): cmd_upstream_info,
+        ("upstream", "import"): cmd_upstream_import,
+        ("upstream", "import-all"): cmd_upstream_import_all,
+        ("upstream", "reimport"): cmd_upstream_reimport,
+        ("upstream", "reimport-all"): cmd_upstream_reimport_all,
+        ("upstream", "drift"): cmd_upstream_drift,
     }
 
     key = (args.command, getattr(args, "subcommand", None))

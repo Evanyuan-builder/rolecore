@@ -123,3 +123,31 @@ def test_review_system_prompt_is_well_formed():
     assert "STRICT JSON" in REVIEW_SYSTEM_PROMPT
     for verdict in ("approved", "needs_work", "rejected"):
         assert verdict in REVIEW_SYSTEM_PROMPT
+
+
+def test_attach_record_mirrors_verdict_into_registry_meta(temp_rm):
+    rm, role_id = temp_rm
+    Reviewer(rm).attach_manual(role_id, verdict="approved", score=5)
+    entry = rm.registry_store.get_entry(role_id)
+    mirror = entry["meta"].get("review")
+    assert mirror is not None
+    assert mirror["verdict"] == "approved"
+    assert mirror["score"] == 5
+    assert mirror["reviewed_at"]
+
+
+def test_resync_pulls_review_verdict_from_yaml(temp_rm):
+    rm, role_id = temp_rm
+    # Attach via Reviewer (writes YAML + mirrors registry)
+    Reviewer(rm).attach_manual(role_id, verdict="needs_work", score=2)
+    # Simulate drift: strip the mirrored review off the registry entry.
+    entry = rm.registry_store.get_entry(role_id)
+    entry["meta"].pop("review", None)
+    rm.registry_store.put_entry(role_id, entry)
+    assert rm.registry_store.get_entry(role_id)["meta"].get("review") is None
+    # Resync should repopulate from YAML.
+    changes = rm.resync_entry_from_yaml(role_id)
+    assert "review" in changes
+    recovered = rm.registry_store.get_entry(role_id)["meta"]["review"]
+    assert recovered["verdict"] == "needs_work"
+    assert recovered["score"] == 2

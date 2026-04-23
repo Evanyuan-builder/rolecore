@@ -131,6 +131,7 @@ class FusionSearchEngine:
         query: str,
         top_k_per_axis: int = 5,
         status_filter: str = "official",
+        verdict_filter: Optional[str] = None,
     ) -> dict:
         tokens = tokenize_query(query)
         if not tokens:
@@ -138,9 +139,14 @@ class FusionSearchEngine:
 
         hits_by_axis = {"job": [], "tech": [], "specialty": []}
         for entry_dict in self.registry_store.list_all_entries():
-            status = (entry_dict.get("meta") or {}).get("status", "")
+            entry_meta = entry_dict.get("meta") or {}
+            status = entry_meta.get("status", "")
             if status_filter and status != status_filter:
                 continue
+            if verdict_filter:
+                review = entry_meta.get("review") or {}
+                if review.get("verdict") != verdict_filter:
+                    continue
             group = entry_dict.get("group", "")
             axis = _AXIS_OF_GROUP.get(group)
             if not axis:

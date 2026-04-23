@@ -150,7 +150,7 @@ class RoleManager:
 
     def resync_entry_from_yaml(self, role_id: str) -> dict:
         """Re-populate the registry entry's denormalized fields
-        (name_cn, name_en, domain, tags, status) from the latest YAML on disk.
+        (name_cn, name_en, domain, tags, status, review) from the latest YAML on disk.
         Also refreshes the checksum. Returns a dict summarizing what changed.
         """
         entry_dict = self.registry_store.get_entry(role_id)
@@ -169,6 +169,15 @@ class RoleManager:
         new_tags = meta.get("tags", []) or []
         new_status = normalize_status(meta.get("status", entry_dict["meta"].get("status", "raw_imported")))
 
+        yaml_review = meta.get("review") or {}
+        new_review = None
+        if yaml_review:
+            new_review = {
+                "verdict": yaml_review.get("verdict", ""),
+                "score": int(yaml_review.get("score") or 0),
+                "reviewed_at": yaml_review.get("reviewed_at", ""),
+            }
+
         if entry_dict.get("name_cn", "") != new_name_cn:
             changes["name_cn"] = (entry_dict.get("name_cn", ""), new_name_cn)
             entry_dict["name_cn"] = new_name_cn
@@ -184,6 +193,13 @@ class RoleManager:
         if entry_dict["meta"].get("status", "") != new_status:
             changes["status"] = (entry_dict["meta"].get("status", ""), new_status)
             entry_dict["meta"]["status"] = new_status
+        cur_review = entry_dict["meta"].get("review")
+        if cur_review != new_review:
+            changes["review"] = (cur_review, new_review)
+            if new_review is None:
+                entry_dict["meta"].pop("review", None)
+            else:
+                entry_dict["meta"]["review"] = new_review
 
         self._refresh_version_checksum(entry_dict, latest)
         if changes:

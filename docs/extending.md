@@ -1,6 +1,10 @@
 # 扩展指南
 
-三条主要扩展路径：**手写一个角色** / **加一个新 group** / **接一个新上游源**。
+> **Showcase note**：第三条"接一个新上游源"涉及的 `rolecore/upstream/` 子包（catalog / importer / reimporter / drift）
+> 在本仓没发，代码住在 private core。这一节保留为**设计参考**，里面的代码片段不能在 showcase 直接跑。
+> 前两条"手写角色"/"加新 group"在本仓完整可用。
+
+三条主要扩展路径：**手写一个角色** / **加一个新 group** / **接一个新上游源 *(private)***。
 
 ## 手写一个角色
 
@@ -226,4 +230,4 @@ python3 cli.py registry stats                        # 看状态分布
 - [concepts.md](concepts.md) — 治理不变量全文
 - [architecture.md](architecture.md) — 核心契约和数据流
 - [reviewer.md](reviewer.md) — 复核流程细节
-- [operations.md](operations.md) — 运营手册（drift 监控 / 备份）
+- `operations.md` — 运营手册（drift 监控 / 备份），在 private core 仓

@@ -1,5 +1,10 @@
 # 核心概念
 
+> **Showcase note**：本仓是 RoleCore 的 public showcase，包含核心包 + 105 个 approved 角色 + 39 tests。
+> "多上游接入 / reimport 护城河 / drift 监控 / 运营手册"涉及的 `upstream/` 子包、`operations.md`、
+> 以及 384 个 community 角色保留在 private core 不发。涉及这些内容时文中保留**设计描述**以便理解
+> 完整系统，但代码不在 showcase 里。
+
 ## 为什么要有 RoleCore
 
 LLM agent 的"角色"很容易写得很漂亮但不能落地——positioning 一段空话、workflow 泛泛而谈、
@@ -156,4 +161,4 @@ cp registry/registry.json registry/registry.json.bak-<tag>-$(date +%Y%m%d-%H%M%S
 - 怎么接新上游 / 写自定义 parser → [extending.md](extending.md)
 - 怎么跑 LLM 复核 → [reviewer.md](reviewer.md)
 - 系统内部怎么分层 → [architecture.md](architecture.md)
-- 日常怎么运营 → [operations.md](operations.md)
+- 日常怎么运营 → `operations.md`（在 private core 仓，涵盖 drift cron / 备份 / 事故响应手册）

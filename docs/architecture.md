@@ -1,12 +1,14 @@
 # 架构
 
+> **Showcase note**：带 `(private)` 标记的模块在本仓没发，代码住在 private core 仓。保留描述是为了让读者看清完整形态。
+
 ## 分层总览
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
 │ CLI (cli.py)                                                 │
 │  role / search / find / export / assemble / registry         │
-│  review / upstream                                           │
+│  review / upstream (private)                                 │
 └──────────────────────────────────────────────────────────────┘
            │
            ▼
@@ -28,7 +30,7 @@
            │
            ▼
 ┌──────────────────────────────────────────────────────────────┐
-│ upstream/            models/           utils/                │
+│ upstream/ (private)  models/           utils/                │
 │  catalog             RoleAsset         schema_validator      │
 │  importer(*)         RegistryEntry     path_utils            │
 │  reimporter          AssemblyContext   version_utils         │

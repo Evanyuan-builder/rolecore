@@ -1,0 +1,4063 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-04-23T07:06:21Z",
+  "roles": {
+    "academic.anthropologist": {
+      "role_id": "academic.anthropologist",
+      "name_cn": "人类学家",
+      "name_en": "Anthropologist",
+      "group": "academic",
+      "domain": "academic_research",
+      "tags": [
+        "academic",
+        "anthropologist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/academic/anthropologist/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Anthropologist",
+          "checksum": "sha256:71b012acde8f77fa79b400d11b983cc61787a6dc90054f050a7c8abe8a536c7f"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/academic/anthropologist/v2.yaml",
+          "created_at": "2026-04-06T04:09:40Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:9905bfa76cb276f9406f07f1c26c8af8b8e2558c9cdb32ea22b27cb44ff4c3e7"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T03:26:37Z",
+        "status": "official"
+      }
+    },
+    "academic.historian": {
+      "role_id": "academic.historian",
+      "name_cn": "历史学家",
+      "name_en": "Historian",
+      "group": "academic",
+      "domain": "academic_research",
+      "tags": [
+        "academic",
+        "historian"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/academic/historian/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Historian",
+          "checksum": "sha256:40945c4f97a1b418734087f00810e9da2b9d2737e10d7e62ffb5dd2cb5381725"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/academic/historian/v2.yaml",
+          "created_at": "2026-04-06T04:09:40Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:870d6f0fd5d0e86bd87396c16d35f4d1021e42be4e075246acf4a79d2c1df5aa"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T03:27:13Z",
+        "status": "official"
+      }
+    },
+    "biz_product.wordpress_master": {
+      "role_id": "biz_product.wordpress_master",
+      "name_cn": "WordPress 专家",
+      "name_en": "Wordpress Master",
+      "group": "biz_product",
+      "domain": "business_product",
+      "tags": [
+        "biz_product",
+        "wordpress_master"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/biz_product/wordpress_master/v1.yaml",
+          "created_at": "2026-04-22T08:03:28Z",
+          "description": "Imported from voltagent-subagents: Wordpress Master",
+          "checksum": "sha256:99c913ceb5e930c88c9328ce946995552bdbb9ba6e5393dde23b51fffc70bb7e"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T08:03:28Z",
+        "updated_at": "2026-04-23T03:31:07Z",
+        "status": "official"
+      }
+    },
+    "core_dev.mobile_developer": {
+      "role_id": "core_dev.mobile_developer",
+      "name_cn": "移动端开发工程师",
+      "name_en": "Mobile Developer",
+      "group": "core_dev",
+      "domain": "core_software_development",
+      "tags": [
+        "core_dev",
+        "mobile_developer"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/core_dev/mobile_developer/v1.yaml",
+          "created_at": "2026-04-22T08:03:26Z",
+          "description": "Imported from voltagent-subagents: Mobile Developer",
+          "checksum": "sha256:8bfd626d45f3007ccfae47931783925a0ec59967c32f968403409eaf429d8695"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T08:03:26Z",
+        "updated_at": "2026-04-23T03:34:01Z",
+        "status": "official"
+      }
+    },
+    "data_ml.numpy": {
+      "role_id": "data_ml.numpy",
+      "name_cn": "Numpy 专家",
+      "name_en": "Numpy Expert",
+      "group": "data_ml",
+      "domain": "data_science_ml",
+      "tags": [
+        "data_ml",
+        "numpy"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/data_ml/numpy/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: Numpy Expert",
+          "checksum": "sha256:2eb900daa87e854accbc06dd20fcec62486f1bcdd10ffcd4a12524ed38772f90"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T03:38:56Z",
+        "status": "official"
+      }
+    },
+    "data_ml.pytorch": {
+      "role_id": "data_ml.pytorch",
+      "name_cn": "PyTorch 专家",
+      "name_en": "PyTorch Expert",
+      "group": "data_ml",
+      "domain": "data_science_ml",
+      "tags": [
+        "data_ml",
+        "pytorch"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/data_ml/pytorch/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: PyTorch Expert",
+          "checksum": "sha256:c9e313531386d8dc2c51a5b2c14f6600a02b97382c1f7508198312d5dfb841ff"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T03:39:37Z",
+        "status": "official"
+      }
+    },
+    "data_ml.scikit_learn": {
+      "role_id": "data_ml.scikit_learn",
+      "name_cn": "scikit-learn 专家",
+      "name_en": "scikit-learn Expert",
+      "group": "data_ml",
+      "domain": "data_science_ml",
+      "tags": [
+        "data_ml",
+        "scikit_learn",
+        "scikit-learn"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/data_ml/scikit_learn/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: scikit-learn Expert",
+          "checksum": "sha256:66333492546513c8bf08e6c003b2e0fc02ae3a5134ccdb26aa2976370a79391a"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T03:39:54Z",
+        "status": "official"
+      }
+    },
+    "database.flyway": {
+      "role_id": "database.flyway",
+      "name_cn": "Flyway 专家",
+      "name_en": "Flyway Expert",
+      "group": "database",
+      "domain": "data_storage",
+      "tags": [
+        "database",
+        "flyway"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/database/flyway/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: Flyway Expert",
+          "checksum": "sha256:f4421e7bdca8fc03726dd43e22e323f58ea795e638980a9191515db0bf04303b"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T03:41:21Z",
+        "status": "official"
+      }
+    },
+    "database.opensearch": {
+      "role_id": "database.opensearch",
+      "name_cn": "OpenSearch 专家",
+      "name_en": "OpenSearch Expert",
+      "group": "database",
+      "domain": "data_storage",
+      "tags": [
+        "database",
+        "opensearch"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/database/opensearch/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: OpenSearch Expert",
+          "checksum": "sha256:78801f4ff79c7ba0ad1de64a4bc79e4c127af739091fb382e9a4f881efcd77ef"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T03:43:38Z",
+        "status": "official"
+      }
+    },
+    "database.sequelize": {
+      "role_id": "database.sequelize",
+      "name_cn": "Sequelize 专家",
+      "name_en": "Sequelize Expert",
+      "group": "database",
+      "domain": "data_storage",
+      "tags": [
+        "database",
+        "sequelize"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/database/sequelize/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: Sequelize Expert",
+          "checksum": "sha256:2418f3de6c611b03cc649ea8a3a84c9822f5098e368c024d2b7a28e7a944d351"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T03:44:34Z",
+        "status": "official"
+      }
+    },
+    "database.sqlite": {
+      "role_id": "database.sqlite",
+      "name_cn": "SQLite 专家",
+      "name_en": "SQLite Expert",
+      "group": "database",
+      "domain": "data_storage",
+      "tags": [
+        "database",
+        "sqlite"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/database/sqlite/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: SQLite Expert",
+          "checksum": "sha256:9151ddef9f61a36717a789d1fbc67e848c8348c02c886539540cce3bd1bfeb61"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T03:45:01Z",
+        "status": "official"
+      }
+    },
+    "database.typeorm": {
+      "role_id": "database.typeorm",
+      "name_cn": "Typeorm 专家",
+      "name_en": "Typeorm Expert",
+      "group": "database",
+      "domain": "data_storage",
+      "tags": [
+        "database",
+        "typeorm"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/database/typeorm/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: Typeorm Expert",
+          "checksum": "sha256:b438649d8990935d2c9421c691cc312b275dd3485d2eced3b68e4d6e6a2d662f"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T03:45:15Z",
+        "status": "official"
+      }
+    },
+    "dev_exp.c4_container": {
+      "role_id": "dev_exp.c4_container",
+      "name_cn": "C4 容器级建模师",
+      "name_en": "C4 Container",
+      "group": "dev_exp",
+      "domain": "developer_experience",
+      "tags": [
+        "dev_exp",
+        "c4_container"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/dev_exp/c4_container/v1.yaml",
+          "created_at": "2026-04-22T08:03:29Z",
+          "description": "Imported from wshobson-agents: C4 Container",
+          "checksum": "sha256:a0e109ce2705b272905899ef5f76648dadab83ef225947a19546bb7c0081a4a8"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T08:03:29Z",
+        "updated_at": "2026-04-23T03:46:36Z",
+        "status": "official"
+      }
+    },
+    "ecommerce.customer_service_ai": {
+      "role_id": "ecommerce.customer_service_ai",
+      "name_cn": "电商客服 AI 岗位",
+      "name_en": "E-Commerce Customer Service AI Agent",
+      "group": "ecommerce",
+      "domain": "ecommerce",
+      "tags": [
+        "ecommerce",
+        "customer-service",
+        "ai-agent",
+        "agf-001"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/ecommerce/customer_service_ai/v1.yaml",
+          "created_at": "2026-04-13T02:29:04Z",
+          "description": "AGF-001 电商客服 AI 岗位 — 基于店铺事实回复、24h 值守、边界转接",
+          "checksum": "sha256:9a9e484d2b0a6151cfcdf5cb40c8da6b9070f95eaaba5f65240d811b9e72c2e2"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-13T02:29:04Z",
+        "updated_at": "2026-04-23T03:51:41Z",
+        "status": "official"
+      }
+    },
+    "engineering.backend_architect": {
+      "role_id": "engineering.backend_architect",
+      "name_cn": "后端架构师",
+      "name_en": "Backend Architect",
+      "group": "engineering",
+      "domain": "software_engineering",
+      "tags": [
+        "engineering",
+        "backend",
+        "architect"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/engineering/backend_architect/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Backend Architect",
+          "checksum": "sha256:1bac906ad359eeede5b50c6e909416f2fd3aa4291b3b79a56c6f9dae9f27ca5f"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/engineering/backend_architect/v2.yaml",
+          "created_at": "2026-04-06T04:09:40Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:98f9d8448fe81e97712ff783fff09e3e8609025a65aa408b1fed4e314bdafc11"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T03:22:08Z",
+        "status": "official"
+      }
+    },
+    "engineering.embedded_firmware_engineer": {
+      "role_id": "engineering.embedded_firmware_engineer",
+      "name_cn": "嵌入式固件工程师",
+      "name_en": "Embedded Firmware Engineer",
+      "group": "engineering",
+      "domain": "software_engineering",
+      "tags": [
+        "engineering",
+        "embedded",
+        "firmware",
+        "engineer"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/engineering/embedded_firmware_engineer/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Embedded Firmware Engineer",
+          "checksum": "sha256:e4ff6bfa7268a8bddc677ee5819705af771176192e59b86e118cbce92f3c956f"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/engineering/embedded_firmware_engineer/v2.yaml",
+          "created_at": "2026-04-06T04:09:40Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:3ec137333c3476c43724a49e7bfc4ead26d1ea8f6d01dc2606a1b6d5db453221"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T03:54:06Z",
+        "status": "official"
+      }
+    },
+    "engineering.filament_optimization_specialist": {
+      "role_id": "engineering.filament_optimization_specialist",
+      "name_cn": "Filament渲染优化专家",
+      "name_en": "Filament Optimization Specialist",
+      "group": "engineering",
+      "domain": "software_engineering",
+      "tags": [
+        "engineering",
+        "filament",
+        "optimization",
+        "specialist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/engineering/filament_optimization_specialist/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Filament Optimization Specialist",
+          "checksum": "sha256:6e6623f87225447cec1b7528be1bb0d431f663ce32faa1034581678f2fa2232a"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/engineering/filament_optimization_specialist/v2.yaml",
+          "created_at": "2026-04-06T04:09:40Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:605806b2e5f4d22c474f8b8c3d523d6316b455d82968337312b18200f6f0f83e"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T03:54:32Z",
+        "status": "official"
+      }
+    },
+    "engineering.incident_response_commander": {
+      "role_id": "engineering.incident_response_commander",
+      "name_cn": "事故响应指挥官",
+      "name_en": "Incident Response Commander",
+      "group": "engineering",
+      "domain": "software_engineering",
+      "tags": [
+        "engineering",
+        "incident",
+        "response",
+        "commander"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/engineering/incident_response_commander/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Incident Response Commander",
+          "checksum": "sha256:674983f99104ff8f237a322e5103211ecf73362c7ffb9fd39fecec4d73c9200a"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/engineering/incident_response_commander/v2.yaml",
+          "created_at": "2026-04-06T04:09:40Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:db50664da6499a9377b662211e1819a706c245c4387261b82e32329a51edf0b0"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T03:55:13Z",
+        "status": "official"
+      }
+    },
+    "engineering.security_engineer": {
+      "role_id": "engineering.security_engineer",
+      "name_cn": "安全工程师",
+      "name_en": "Security Engineer",
+      "group": "engineering",
+      "domain": "software_engineering",
+      "tags": [
+        "engineering",
+        "security",
+        "engineer"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/engineering/security_engineer/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Security Engineer",
+          "checksum": "sha256:58397f97d233923df7ccb35ab75b81d59d4990052eee57576d0a7e554e228900"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/engineering/security_engineer/v2.yaml",
+          "created_at": "2026-04-06T04:09:40Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:3ce754d2f0ee7fa1608b41343e665874bf27ce22c31579f4ec430fb407eba5ce"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T03:55:54Z",
+        "status": "official"
+      }
+    },
+    "engineering.sre": {
+      "role_id": "engineering.sre",
+      "name_cn": "站点可靠性工程师",
+      "name_en": "SRE (Site Reliability Engineer)",
+      "group": "engineering",
+      "domain": "software_engineering",
+      "tags": [
+        "engineering",
+        "sre"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/engineering/sre/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: SRE (Site Reliability Engineer)",
+          "checksum": "sha256:e79b8de8c8bde4bb29a9c71e72e4d5fd9820becfb63ac89e89f1c15c4902976b"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/engineering/sre/v2.yaml",
+          "created_at": "2026-04-06T04:09:40Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:a85766030ddf31089ca0ffeb3df734922ac6177b5030353327d814e111b28b3b"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T03:56:54Z",
+        "status": "official"
+      }
+    },
+    "engineering.technical_writer": {
+      "role_id": "engineering.technical_writer",
+      "name_cn": "技术文档工程师",
+      "name_en": "Technical Writer",
+      "group": "engineering",
+      "domain": "software_engineering",
+      "tags": [
+        "engineering",
+        "technical",
+        "writer"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/engineering/technical_writer/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Technical Writer",
+          "checksum": "sha256:db3822ae76353dc0f33845a1615c3157f100d8e6813ea2e05dae0b957a20c70e"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/engineering/technical_writer/v2.yaml",
+          "created_at": "2026-04-06T04:09:40Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:a96e734e1363be28a7ecabe24db39d25a16c2e4e8fea929b0d0fe73966120c49"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T03:57:08Z",
+        "status": "official"
+      }
+    },
+    "engineering.wechat_mini_program_developer": {
+      "role_id": "engineering.wechat_mini_program_developer",
+      "name_cn": "微信小程序开发工程师",
+      "name_en": "WeChat Mini Program Developer",
+      "group": "engineering",
+      "domain": "software_engineering",
+      "tags": [
+        "engineering",
+        "wechat",
+        "mini",
+        "program",
+        "developer"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/engineering/wechat_mini_program_developer/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: WeChat Mini Program Developer",
+          "checksum": "sha256:340d0499c240bab1252cb9211f23b271ad87736ec8a5c7fd66ceb6526e39ecbf"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/engineering/wechat_mini_program_developer/v2.yaml",
+          "created_at": "2026-04-06T04:09:40Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:9a7fede376accb591964a8c47067014a3b5f3ec210141a1824a4a24ab080817d"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T03:57:39Z",
+        "status": "official"
+      }
+    },
+    "framework.android": {
+      "role_id": "framework.android",
+      "name_cn": "Android 专家",
+      "name_en": "Android Expert",
+      "group": "framework",
+      "domain": "application_framework",
+      "tags": [
+        "framework",
+        "android"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/framework/android/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: Android Expert",
+          "checksum": "sha256:a25323d9e1773abb05b4f59ba800f47276a176590c3bd994990952d100fae15d"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T03:58:11Z",
+        "status": "official"
+      }
+    },
+    "framework.aspnet_core": {
+      "role_id": "framework.aspnet_core",
+      "name_cn": "ASP.NET Core 专家",
+      "name_en": "ASP.NET Core Expert",
+      "group": "framework",
+      "domain": "application_framework",
+      "tags": [
+        "framework",
+        "aspnet_core",
+        "aspnet-core"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/framework/aspnet_core/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: ASP.NET Core Expert",
+          "checksum": "sha256:b92fe208f686d843f61f9948f0f29f403bf3ba35a85303c94fe8798124f5ab05"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T03:58:55Z",
+        "status": "official"
+      }
+    },
+    "framework.css": {
+      "role_id": "framework.css",
+      "name_cn": "CSS 专家",
+      "name_en": "CSS Expert",
+      "group": "framework",
+      "domain": "application_framework",
+      "tags": [
+        "framework",
+        "css"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/framework/css/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: CSS Expert",
+          "checksum": "sha256:046142ac9fcd7c34cb905661e3557eed49467f2afbd241c9b8ed460cd6bdde09"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T03:59:24Z",
+        "status": "official"
+      }
+    },
+    "framework.django": {
+      "role_id": "framework.django",
+      "name_cn": "Django 专家",
+      "name_en": "Django Expert",
+      "group": "framework",
+      "domain": "application_framework",
+      "tags": [
+        "framework",
+        "django"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/framework/django/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: Django Expert",
+          "checksum": "sha256:b8bca96506fbba3bc727bfb557474173ab9078821ecb2274f190e2c4c2729719"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T03:59:36Z",
+        "status": "official"
+      }
+    },
+    "framework.fastify": {
+      "role_id": "framework.fastify",
+      "name_cn": "Fastify 专家",
+      "name_en": "Fastify Expert",
+      "group": "framework",
+      "domain": "application_framework",
+      "tags": [
+        "framework",
+        "fastify"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/framework/fastify/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: Fastify Expert",
+          "checksum": "sha256:c8fa43bbeed3c6322d9ce83d86c255a7f3420d0c2a919c52a35dcf7ae09514d8"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T04:00:59Z",
+        "status": "official"
+      }
+    },
+    "framework.flutter": {
+      "role_id": "framework.flutter",
+      "name_cn": "Flutter 专家",
+      "name_en": "Flutter Expert",
+      "group": "framework",
+      "domain": "application_framework",
+      "tags": [
+        "framework",
+        "flutter"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/framework/flutter/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: Flutter Expert",
+          "checksum": "sha256:148132acf36ef0803a4a54b8c141bd1dd9c5af02ab8aeaf3d6bbe251c8bcf51e"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T04:01:49Z",
+        "status": "official"
+      }
+    },
+    "framework.gin": {
+      "role_id": "framework.gin",
+      "name_cn": "Gin 专家",
+      "name_en": "Gin Expert",
+      "group": "framework",
+      "domain": "application_framework",
+      "tags": [
+        "framework",
+        "gin"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/framework/gin/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: Gin Expert",
+          "checksum": "sha256:6673956a652ccfa1f66458ebf67d45a61b9545576651c160d72e8ea0fffaa8a0"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T04:02:05Z",
+        "status": "official"
+      }
+    },
+    "framework.nextjs": {
+      "role_id": "framework.nextjs",
+      "name_cn": "Next.js 专家",
+      "name_en": "Next.js Expert",
+      "group": "framework",
+      "domain": "application_framework",
+      "tags": [
+        "framework",
+        "nextjs"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/framework/nextjs/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: Next.js Expert",
+          "checksum": "sha256:9fff02064ac1e6d91b043d5974501ccd7e326e399bebb6a20bf3e2546cd826c3"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T04:03:41Z",
+        "status": "official"
+      }
+    },
+    "framework.svelte": {
+      "role_id": "framework.svelte",
+      "name_cn": "Svelte 专家",
+      "name_en": "Svelte Expert",
+      "group": "framework",
+      "domain": "application_framework",
+      "tags": [
+        "framework",
+        "svelte"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/framework/svelte/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: Svelte Expert",
+          "checksum": "sha256:bd1575fc2f12097cb5dfec2ad55b9fed0f53fbb447135c1d45f0c9ae87582d94"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T04:05:56Z",
+        "status": "official"
+      }
+    },
+    "framework.tauri": {
+      "role_id": "framework.tauri",
+      "name_cn": "Tauri 专家",
+      "name_en": "Tauri Expert",
+      "group": "framework",
+      "domain": "application_framework",
+      "tags": [
+        "framework",
+        "tauri"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/framework/tauri/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: Tauri Expert",
+          "checksum": "sha256:ff242bf5aac4fdcff024e5dec4d5fefad7ccd14ed08576c7467f811791485cd6"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T04:06:40Z",
+        "status": "official"
+      }
+    },
+    "framework.vue": {
+      "role_id": "framework.vue",
+      "name_cn": "Vue 专家",
+      "name_en": "Vue Expert",
+      "group": "framework",
+      "domain": "application_framework",
+      "tags": [
+        "framework",
+        "vue"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/framework/vue/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: Vue Expert",
+          "checksum": "sha256:42a1d9e1947c5e3f653cfdd89926fdaa57eb2951ed1f64303f3e727d38d1f2cc"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T04:07:06Z",
+        "status": "official"
+      }
+    },
+    "game_development.level_designer": {
+      "role_id": "game_development.level_designer",
+      "name_cn": "关卡设计师",
+      "name_en": "Level Designer",
+      "group": "game_development",
+      "domain": "game_development",
+      "tags": [
+        "game_development",
+        "level",
+        "designer"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/game_development/level_designer/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Level Designer",
+          "checksum": "sha256:4a48e69777f17f1793130bf3172c3545dd8414423a3f7542738906db45e1a521"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/game_development/level_designer/v2.yaml",
+          "created_at": "2026-04-06T04:09:40Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:f243003a58ca08e080cbde873b590b608fd9e50ca23c9a3c2d6ac9c4f9607967"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:07:47Z",
+        "status": "official"
+      }
+    },
+    "game_development.narrative_designer": {
+      "role_id": "game_development.narrative_designer",
+      "name_cn": "叙事设计师",
+      "name_en": "Narrative Designer",
+      "group": "game_development",
+      "domain": "game_development",
+      "tags": [
+        "game_development",
+        "narrative",
+        "designer"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/game_development/narrative_designer/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Narrative Designer",
+          "checksum": "sha256:34839f97d0e9610665acb697094a989b85fb8c272993dc37d95e549a78e2ae3a"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/game_development/narrative_designer/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:627a9eb382b84edfd5325676bb2c27c8e39bea5dce54cca5dc6cabaf1560108f"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:08:01Z",
+        "status": "official"
+      }
+    },
+    "infrastructure.loki": {
+      "role_id": "infrastructure.loki",
+      "name_cn": "Loki 专家",
+      "name_en": "Loki Expert",
+      "group": "infrastructure",
+      "domain": "devops_infrastructure",
+      "tags": [
+        "infrastructure",
+        "loki"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/infrastructure/loki/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: Loki Expert",
+          "checksum": "sha256:e8b1a52c7b9d8c6c272a39ba2de41c07e904a9f8da349f26945a5c23e37624dc"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T04:16:45Z",
+        "status": "official"
+      }
+    },
+    "infrastructure.prometheus": {
+      "role_id": "infrastructure.prometheus",
+      "name_cn": "Prometheus 专家",
+      "name_en": "Prometheus Expert",
+      "group": "infrastructure",
+      "domain": "devops_infrastructure",
+      "tags": [
+        "infrastructure",
+        "prometheus"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/infrastructure/prometheus/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: Prometheus Expert",
+          "checksum": "sha256:30b3005991742e52711d33d6a0dde22c07ad1910a4538e0056486132b280341e"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T04:17:16Z",
+        "status": "official"
+      }
+    },
+    "infrastructure.pulumi": {
+      "role_id": "infrastructure.pulumi",
+      "name_cn": "Pulumi 专家",
+      "name_en": "Pulumi Expert",
+      "group": "infrastructure",
+      "domain": "devops_infrastructure",
+      "tags": [
+        "infrastructure",
+        "pulumi"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/infrastructure/pulumi/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: Pulumi Expert",
+          "checksum": "sha256:a966198e096d0ee93a18d2930f8e64de3646c100e39429f74893c5c98667708d"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T04:17:28Z",
+        "status": "official"
+      }
+    },
+    "infrastructure.terraform": {
+      "role_id": "infrastructure.terraform",
+      "name_cn": "Terraform 专家",
+      "name_en": "Terraform Expert",
+      "group": "infrastructure",
+      "domain": "devops_infrastructure",
+      "tags": [
+        "infrastructure",
+        "terraform"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/infrastructure/terraform/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: Terraform Expert",
+          "checksum": "sha256:e9481e8e5e55ff9ca4c34d77cfc488f38d023b44755527a1ee1967a30621f0f4"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T04:17:42Z",
+        "status": "official"
+      }
+    },
+    "integration.auth0": {
+      "role_id": "integration.auth0",
+      "name_cn": "Auth0 专家",
+      "name_en": "Auth0 Expert",
+      "group": "integration",
+      "domain": "integration_messaging",
+      "tags": [
+        "integration",
+        "auth0"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/integration/auth0/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: Auth0 Expert",
+          "checksum": "sha256:694514d80d110b347bb3c4aa875be7d9ec574c1fd852615222a3d61667c0ccb8"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T04:17:57Z",
+        "status": "official"
+      }
+    },
+    "integration.bullmq": {
+      "role_id": "integration.bullmq",
+      "name_cn": "BullMQ 专家",
+      "name_en": "BullMQ Expert",
+      "group": "integration",
+      "domain": "integration_messaging",
+      "tags": [
+        "integration",
+        "bullmq"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/integration/bullmq/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: BullMQ Expert",
+          "checksum": "sha256:3ced0944597e8e6ef9b8e8a703ed287b611516aff508eba118fbf0a2cd86b146"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T04:18:10Z",
+        "status": "official"
+      }
+    },
+    "integration.celery": {
+      "role_id": "integration.celery",
+      "name_cn": "Celery 专家",
+      "name_en": "Celery Expert",
+      "group": "integration",
+      "domain": "integration_messaging",
+      "tags": [
+        "integration",
+        "celery"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/integration/celery/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: Celery Expert",
+          "checksum": "sha256:72dbd672bef92aac9836bef5d53a3269a821522469fe55aeb083ec2e5a3fe1fb"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T04:18:29Z",
+        "status": "official"
+      }
+    },
+    "integration.graphql": {
+      "role_id": "integration.graphql",
+      "name_cn": "GraphQL 专家",
+      "name_en": "GraphQL Expert",
+      "group": "integration",
+      "domain": "integration_messaging",
+      "tags": [
+        "integration",
+        "graphql"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/integration/graphql/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: GraphQL Expert",
+          "checksum": "sha256:19b0649430587183edc246c54460a447affaacb2d426f7f6081cfcda6ead1d0d"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T04:18:41Z",
+        "status": "official"
+      }
+    },
+    "integration.openapi": {
+      "role_id": "integration.openapi",
+      "name_cn": "OpenAPI 专家",
+      "name_en": "OpenAPI Expert",
+      "group": "integration",
+      "domain": "integration_messaging",
+      "tags": [
+        "integration",
+        "openapi"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/integration/openapi/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: OpenAPI Expert",
+          "checksum": "sha256:429132fcc412db071aa3fe1b27b7d3771d863f2d3f32e37dc2db6051289a198e"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T04:20:41Z",
+        "status": "official"
+      }
+    },
+    "integration.rabbitmq": {
+      "role_id": "integration.rabbitmq",
+      "name_cn": "RabbitMQ 专家",
+      "name_en": "RabbitMQ Expert",
+      "group": "integration",
+      "domain": "integration_messaging",
+      "tags": [
+        "integration",
+        "rabbitmq"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/integration/rabbitmq/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: RabbitMQ Expert",
+          "checksum": "sha256:80ee48f0ba1a180a583949ae8c3bccad4dfc0a4aa1afa76989a13e30725b239a"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T04:21:09Z",
+        "status": "official"
+      }
+    },
+    "integration.sns": {
+      "role_id": "integration.sns",
+      "name_cn": "AWS SNS 专家",
+      "name_en": "AWS SNS Expert",
+      "group": "integration",
+      "domain": "integration_messaging",
+      "tags": [
+        "integration",
+        "sns"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/integration/sns/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: AWS SNS Expert",
+          "checksum": "sha256:32133f831e28ee10fcb03f6a89bdb25d7d52aecc75ab6ba86deda68fa8fd8258"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T04:21:57Z",
+        "status": "official"
+      }
+    },
+    "integration.sqs": {
+      "role_id": "integration.sqs",
+      "name_cn": "AWS SQS 专家",
+      "name_en": "AWS SQS Expert",
+      "group": "integration",
+      "domain": "integration_messaging",
+      "tags": [
+        "integration",
+        "sqs"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/integration/sqs/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: AWS SQS Expert",
+          "checksum": "sha256:abec3aaea63a705d93134ef8134b3d24cdb6843a500cdb85dc1fb5400fef7adf"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T04:22:16Z",
+        "status": "official"
+      }
+    },
+    "integration.websocket": {
+      "role_id": "integration.websocket",
+      "name_cn": "Websocket 专家",
+      "name_en": "Websocket Expert",
+      "group": "integration",
+      "domain": "integration_messaging",
+      "tags": [
+        "integration",
+        "websocket"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/integration/websocket/v1.yaml",
+          "created_at": "2026-04-22T07:30:54Z",
+          "description": "Imported from 0xfurai-subagents: Websocket Expert",
+          "checksum": "sha256:18729ac5f2ade995f7f9e80f327afa463c3d0f629e57a062eff02c21e76bbbee"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:54Z",
+        "updated_at": "2026-04-23T04:22:31Z",
+        "status": "official"
+      }
+    },
+    "language.bash": {
+      "role_id": "language.bash",
+      "name_cn": "Bash 专家",
+      "name_en": "Bash Expert",
+      "group": "language",
+      "domain": "programming_language",
+      "tags": [
+        "language",
+        "bash"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/language/bash/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: Bash Expert",
+          "checksum": "sha256:7c546799df2f69bd8b270cd1bc1c8641c9134026f017c613ae81746a2698d90c"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T03:23:11Z",
+        "status": "official"
+      }
+    },
+    "language.elixir": {
+      "role_id": "language.elixir",
+      "name_cn": "Elixir 专家",
+      "name_en": "Elixir Expert",
+      "group": "language",
+      "domain": "programming_language",
+      "tags": [
+        "language",
+        "elixir"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/language/elixir/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: Elixir Expert",
+          "checksum": "sha256:f5ebb0da9073902e7801d29e5d3790c83f8b8ca3a2a15fcde2988f228f0f02e7"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T04:24:41Z",
+        "status": "official"
+      }
+    },
+    "language.erlang": {
+      "role_id": "language.erlang",
+      "name_cn": "Erlang 专家",
+      "name_en": "Erlang Expert",
+      "group": "language",
+      "domain": "programming_language",
+      "tags": [
+        "language",
+        "erlang"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/language/erlang/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: Erlang Expert",
+          "checksum": "sha256:e514302e7b75639ccb20607fbe22a6d04cd4c806eab8744919d7b89382ecbc35"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T04:24:54Z",
+        "status": "official"
+      }
+    },
+    "language.java": {
+      "role_id": "language.java",
+      "name_cn": "Java 专家",
+      "name_en": "Java Expert",
+      "group": "language",
+      "domain": "programming_language",
+      "tags": [
+        "language",
+        "java"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/language/java/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: Java Expert",
+          "checksum": "sha256:0b8c16f602b36bf9b5d80851dc79698a5665791fa2129c4f35dc54d74d23e9e6"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T04:25:34Z",
+        "status": "official"
+      }
+    },
+    "language.kotlin": {
+      "role_id": "language.kotlin",
+      "name_cn": "Kotlin 专家",
+      "name_en": "Kotlin Expert",
+      "group": "language",
+      "domain": "programming_language",
+      "tags": [
+        "language",
+        "kotlin"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/language/kotlin/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: Kotlin Expert",
+          "checksum": "sha256:756a7c25ad917645c10e3f2c5e9d3f21a9399534246d7efec586507235ad56db"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T04:26:01Z",
+        "status": "official"
+      }
+    },
+    "language.ocaml": {
+      "role_id": "language.ocaml",
+      "name_cn": "Ocaml 专家",
+      "name_en": "Ocaml Expert",
+      "group": "language",
+      "domain": "programming_language",
+      "tags": [
+        "language",
+        "ocaml"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/language/ocaml/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: Ocaml Expert",
+          "checksum": "sha256:9fd51359783eed558cc8b5d3da197e933dcbc60e228610c89063f3a9ce06bd4c"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T04:26:47Z",
+        "status": "official"
+      }
+    },
+    "language.rust": {
+      "role_id": "language.rust",
+      "name_cn": "Rust 专家",
+      "name_en": "Rust Expert",
+      "group": "language",
+      "domain": "programming_language",
+      "tags": [
+        "language",
+        "rust"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/language/rust/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: Rust Expert",
+          "checksum": "sha256:818280dd18ba80d2e3f3ca847f116a18bd3d73e0f39e5ac2fdbbd90a7786fec7"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T04:27:47Z",
+        "status": "official"
+      }
+    },
+    "language_specialist.cpp_pro": {
+      "role_id": "language_specialist.cpp_pro",
+      "name_cn": "C++ 高级开发",
+      "name_en": "Cpp Pro",
+      "group": "language_specialist",
+      "domain": "language_framework_expertise",
+      "tags": [
+        "language_specialist",
+        "cpp_pro"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/language_specialist/cpp_pro/v1.yaml",
+          "created_at": "2026-04-22T08:03:26Z",
+          "description": "Imported from voltagent-subagents: Cpp Pro",
+          "checksum": "sha256:85cf10a0ab89158e61bb24804638305bf265dfe865245ea430a541b942ff1bd1"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T08:03:26Z",
+        "updated_at": "2026-04-23T04:29:17Z",
+        "status": "official"
+      }
+    },
+    "language_specialist.julia_pro": {
+      "role_id": "language_specialist.julia_pro",
+      "name_cn": "Julia 高级开发",
+      "name_en": "Julia Pro",
+      "group": "language_specialist",
+      "domain": "language_framework_expertise",
+      "tags": [
+        "language_specialist",
+        "julia_pro"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/language_specialist/julia_pro/v1.yaml",
+          "created_at": "2026-04-22T08:03:29Z",
+          "description": "Imported from wshobson-agents: Julia Pro",
+          "checksum": "sha256:69126a078ef919acee0a8d9450009b9f79745f7f2633b02552133a0d8b019f10"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T08:03:29Z",
+        "updated_at": "2026-04-23T04:34:17Z",
+        "status": "official"
+      }
+    },
+    "language_specialist.rust_pro": {
+      "role_id": "language_specialist.rust_pro",
+      "name_cn": "Rust 高级开发",
+      "name_en": "Rust Pro",
+      "group": "language_specialist",
+      "domain": "language_framework_expertise",
+      "tags": [
+        "language_specialist",
+        "rust_pro"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/language_specialist/rust_pro/v1.yaml",
+          "created_at": "2026-04-22T08:03:30Z",
+          "description": "Imported from wshobson-agents: Rust Pro",
+          "checksum": "sha256:b6a0a7a99376fd2ad99a7397105887f4b50bf7489915aebd4fe2e7ef91c00f25"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T08:03:30Z",
+        "updated_at": "2026-04-23T04:37:39Z",
+        "status": "official"
+      }
+    },
+    "language_specialist.typescript_pro": {
+      "role_id": "language_specialist.typescript_pro",
+      "name_cn": "TypeScript 高级开发",
+      "name_en": "Typescript Pro",
+      "group": "language_specialist",
+      "domain": "language_framework_expertise",
+      "tags": [
+        "language_specialist",
+        "typescript_pro"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/language_specialist/typescript_pro/v1.yaml",
+          "created_at": "2026-04-22T08:03:27Z",
+          "description": "Imported from voltagent-subagents: Typescript Pro",
+          "checksum": "sha256:c6d7014107fa315c8ff8a4b323a664269e956f2d9727983d86cb1c4b812646b6"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T08:03:27Z",
+        "updated_at": "2026-04-23T04:39:11Z",
+        "status": "official"
+      }
+    },
+    "marketing.baidu_seo_specialist": {
+      "role_id": "marketing.baidu_seo_specialist",
+      "name_cn": "百度SEO专员",
+      "name_en": "Baidu SEO Specialist",
+      "group": "marketing",
+      "domain": "marketing",
+      "tags": [
+        "marketing",
+        "baidu",
+        "seo",
+        "specialist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/marketing/baidu_seo_specialist/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Baidu SEO Specialist",
+          "checksum": "sha256:10d648dadcbc60d069dd15b8720ccdb181c790ac812f3a9271c68eee367eeb38"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/marketing/baidu_seo_specialist/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:14014b48ea1fd2c40517af38386bafb308cf07d9d9e7a89a4ee654069d07b6e1"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:40:07Z",
+        "status": "official"
+      }
+    },
+    "marketing.bilibili_content_strategist": {
+      "role_id": "marketing.bilibili_content_strategist",
+      "name_cn": "B站内容策略师",
+      "name_en": "Bilibili Content Strategist",
+      "group": "marketing",
+      "domain": "marketing",
+      "tags": [
+        "marketing",
+        "bilibili",
+        "content",
+        "strategist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/marketing/bilibili_content_strategist/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Bilibili Content Strategist",
+          "checksum": "sha256:3eb35f9d07b1d3201220fbe71f2ef6389ef1057dffadca42dec99eaf0e0c5b46"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/marketing/bilibili_content_strategist/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:d7228cbfe9af6ce269df3366cedcc4be97d70c392af396681d7fe4d41cf12fd4"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:40:25Z",
+        "status": "official"
+      }
+    },
+    "marketing.book_co_author": {
+      "role_id": "marketing.book_co_author",
+      "name_cn": "书籍联合创作者",
+      "name_en": "Book Co-Author",
+      "group": "marketing",
+      "domain": "marketing",
+      "tags": [
+        "marketing",
+        "book",
+        "author"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/marketing/book_co_author/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Book Co-Author",
+          "checksum": "sha256:4f4b1c5f0a4beb2faae08cbd64e28baccff3368ea9cc846fc25c65dd2c1e9777"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/marketing/book_co_author/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:db8ed11605540524200126d34d5c3572be76b7049d86e404ece5f876d514348c"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:40:37Z",
+        "status": "official"
+      }
+    },
+    "marketing.china_ecommerce_operator": {
+      "role_id": "marketing.china_ecommerce_operator",
+      "name_cn": "中国电商运营师",
+      "name_en": "China E-Commerce Operator",
+      "group": "marketing",
+      "domain": "marketing",
+      "tags": [
+        "marketing",
+        "china",
+        "ecommerce",
+        "operator"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/marketing/china_ecommerce_operator/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: China E-Commerce Operator",
+          "checksum": "sha256:c2e09d3905baa709a91245a72b86227bba72c5a7968c4fa976f83c2c72df28e8"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/marketing/china_ecommerce_operator/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:632adb0a6e17db9d8000789e6103ad6406592c616a159b54f4ce9bec609d0d59"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:41:07Z",
+        "status": "official"
+      }
+    },
+    "marketing.content_creator": {
+      "role_id": "marketing.content_creator",
+      "name_cn": "内容创作者",
+      "name_en": "Content Creator",
+      "group": "marketing",
+      "domain": "marketing",
+      "tags": [
+        "marketing",
+        "content",
+        "creator"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/marketing/content_creator/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Content Creator",
+          "checksum": "sha256:6c1797e0b7954db17c6dbf92cec30321d9214f2cddefeeb027008ef65c513940"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/marketing/content_creator/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:d7da911ff40c8ccd4ef111325f9a25c316ce1bde5221ed9f8aab8652085aed4e"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:41:34Z",
+        "status": "official"
+      }
+    },
+    "marketing.cross_border_ecommerce": {
+      "role_id": "marketing.cross_border_ecommerce",
+      "name_cn": "跨境电商专家",
+      "name_en": "Cross-Border E-Commerce Specialist",
+      "group": "marketing",
+      "domain": "marketing",
+      "tags": [
+        "marketing",
+        "cross",
+        "border",
+        "ecommerce"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/marketing/cross_border_ecommerce/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Cross-Border E-Commerce Specialist",
+          "checksum": "sha256:4427183557508a26eb714b0aee6bde1cf53053a0de0071d1462d83c7009f3cc3"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/marketing/cross_border_ecommerce/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:f1b7e576cc90d9f1582a8db23a8c80d3b3c7082ce9c54d30b3082113a0d3702b"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:41:47Z",
+        "status": "official"
+      }
+    },
+    "marketing.douyin_strategist": {
+      "role_id": "marketing.douyin_strategist",
+      "name_cn": "抖音内容策略师",
+      "name_en": "Douyin Strategist",
+      "group": "marketing",
+      "domain": "marketing",
+      "tags": [
+        "marketing",
+        "douyin",
+        "strategist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/marketing/douyin_strategist/v1.yaml",
+          "created_at": "2026-04-06T02:40:17Z",
+          "description": "Imported from agency-agents: Douyin Strategist",
+          "checksum": "sha256:7f70677534168c80654538ed16423716a17682c8c75704a28283011355e435e4"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/marketing/douyin_strategist/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:0fd8d28c007d8a57c81e97798a6194b779408364a84527773a458f6bbf2e9ef4"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:17Z",
+        "updated_at": "2026-04-23T04:42:06Z",
+        "status": "official"
+      }
+    },
+    "marketing.growth_hacker": {
+      "role_id": "marketing.growth_hacker",
+      "name_cn": "增长黑客",
+      "name_en": "Growth Hacker",
+      "group": "marketing",
+      "domain": "marketing",
+      "tags": [
+        "marketing",
+        "growth",
+        "hacker"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/marketing/growth_hacker/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Growth Hacker",
+          "checksum": "sha256:89cb277c7302e073ffef6043bfcd26f538bac9d8737258be8acb87438387522c"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/marketing/growth_hacker/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:57b25ed227bd3f8464d24fc42e6876cb31fd420e1d531947173e0666c4de3b9d"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:42:19Z",
+        "status": "official"
+      }
+    },
+    "marketing.kuaishou_strategist": {
+      "role_id": "marketing.kuaishou_strategist",
+      "name_cn": "快手运营策略师",
+      "name_en": "Kuaishou Strategist",
+      "group": "marketing",
+      "domain": "marketing",
+      "tags": [
+        "marketing",
+        "kuaishou",
+        "strategist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/marketing/kuaishou_strategist/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Kuaishou Strategist",
+          "checksum": "sha256:f09d4c0cba143fda3ef027d0c52f092757ad2dc8838062f0ff0ffb217a108a1c"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/marketing/kuaishou_strategist/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:6253bd2bd6c2cdffcd3ea43ef494ca400b8e426ef415c804bfdd2692641138a3"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:42:49Z",
+        "status": "official"
+      }
+    },
+    "marketing.podcast_strategist": {
+      "role_id": "marketing.podcast_strategist",
+      "name_cn": "播客策略师",
+      "name_en": "Podcast Strategist",
+      "group": "marketing",
+      "domain": "marketing",
+      "tags": [
+        "marketing",
+        "podcast",
+        "strategist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/marketing/podcast_strategist/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Podcast Strategist",
+          "checksum": "sha256:3dbc2012cedf010fbed5054a44218241df44c9cd6bdb8ac539bf3a6009aa9973"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/marketing/podcast_strategist/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:52110c1aa34f0bc68de210ed9fbc9ea63877f76707301e385009875a1458dadc"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:43:32Z",
+        "status": "official"
+      }
+    },
+    "marketing.seo_specialist": {
+      "role_id": "marketing.seo_specialist",
+      "name_cn": "SEO专员",
+      "name_en": "SEO Specialist",
+      "group": "marketing",
+      "domain": "marketing",
+      "tags": [
+        "marketing",
+        "seo",
+        "specialist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/marketing/seo_specialist/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: SEO Specialist",
+          "checksum": "sha256:13388013ae10db0591720032d5d6e087cc84b2a2e5d016ff5a422a26c187b884"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/marketing/seo_specialist/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:dc7d8a15f1ae0e0e281010517f38bb120391550439a2addf07e55533a805c7ba"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:44:15Z",
+        "status": "official"
+      }
+    },
+    "marketing.social_media_strategist": {
+      "role_id": "marketing.social_media_strategist",
+      "name_cn": "社交媒体策略师",
+      "name_en": "Social Media Strategist",
+      "group": "marketing",
+      "domain": "marketing",
+      "tags": [
+        "marketing",
+        "social",
+        "media",
+        "strategist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/marketing/social_media_strategist/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Social Media Strategist",
+          "checksum": "sha256:ba3164cda9e91f89f43d209bc1b28cdfe93c0c1d6824de60ee91fae698964ddf"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/marketing/social_media_strategist/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:e2cd3aa3d28da49e6e068a229b9c5e5c6f0af92d8afadd6bc13d89c9a6d382d5"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:44:50Z",
+        "status": "official"
+      }
+    },
+    "marketing.twitter_engager": {
+      "role_id": "marketing.twitter_engager",
+      "name_cn": "Twitter互动运营师",
+      "name_en": "Twitter Engager",
+      "group": "marketing",
+      "domain": "marketing",
+      "tags": [
+        "marketing",
+        "twitter",
+        "engager"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/marketing/twitter_engager/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Twitter Engager",
+          "checksum": "sha256:622e10617ef7cc4d2cb1580a78adb43162ce53d3348d020e5e5a65eaf0fe3612"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/marketing/twitter_engager/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:93ae7ef87e58de97a51a346f421910e6564884a2681917db77cce4cec5abd873"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:45:17Z",
+        "status": "official"
+      }
+    },
+    "marketing.zhihu_strategist": {
+      "role_id": "marketing.zhihu_strategist",
+      "name_cn": "知乎运营策略师",
+      "name_en": "Zhihu Strategist",
+      "group": "marketing",
+      "domain": "marketing",
+      "tags": [
+        "marketing",
+        "zhihu",
+        "strategist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/marketing/zhihu_strategist/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Zhihu Strategist",
+          "checksum": "sha256:0b4be2d7162491aa94ca31aa2f9b6c5e97827567226c91f130452bb97b9c3cb8"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/marketing/zhihu_strategist/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:a1fda06c74d05b8127e5a726a3f46d65fb188264b2c7435d286a73036aaed80c"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:46:31Z",
+        "status": "official"
+      }
+    },
+    "paid_media.ppc_strategist": {
+      "role_id": "paid_media.ppc_strategist",
+      "name_cn": "PPC竞价策略师",
+      "name_en": "PPC Campaign Strategist",
+      "group": "paid_media",
+      "domain": "paid_media",
+      "tags": [
+        "paid_media",
+        "ppc",
+        "strategist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/paid_media/ppc_strategist/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: PPC Campaign Strategist",
+          "checksum": "sha256:03857c230de46c016e595794ca96f04db034cc9e5b8a92a4e74730dffa32f88f"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/paid_media/ppc_strategist/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:167264cecca4eb3969d0f4bce2258b347e92248211ce58db8e2a058e389c3553"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:52:04Z",
+        "status": "official"
+      }
+    },
+    "paid_media.programmatic_buyer": {
+      "role_id": "paid_media.programmatic_buyer",
+      "name_cn": "程序化广告采购师",
+      "name_en": "Programmatic & Display Buyer",
+      "group": "paid_media",
+      "domain": "paid_media",
+      "tags": [
+        "paid_media",
+        "programmatic",
+        "buyer"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/paid_media/programmatic_buyer/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Programmatic & Display Buyer",
+          "checksum": "sha256:a75a878ef7cd0ddfa1e41c68e7a4a28104dce5fd45b20fce8516b036e09c3401"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/paid_media/programmatic_buyer/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:db75153c1733c82c8757e4832c6db2174ed4f7b1eb5e02f1be8ae049c63e0fac"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:52:20Z",
+        "status": "official"
+      }
+    },
+    "paid_media.search_query_analyst": {
+      "role_id": "paid_media.search_query_analyst",
+      "name_cn": "搜索查询分析师",
+      "name_en": "Search Query Analyst",
+      "group": "paid_media",
+      "domain": "paid_media",
+      "tags": [
+        "paid_media",
+        "search",
+        "query",
+        "analyst"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/paid_media/search_query_analyst/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Search Query Analyst",
+          "checksum": "sha256:f72a0bfa7ecfe926e4d747324c938416696f3f37105f91567085bf5443de2cf6"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/paid_media/search_query_analyst/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:f448f307ab81304580a2019d66e3cda508c37a0e5d4ca0a11f529bae8255cd00"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:52:33Z",
+        "status": "official"
+      }
+    },
+    "paid_media.tracking_specialist": {
+      "role_id": "paid_media.tracking_specialist",
+      "name_cn": "广告追踪与归因专员",
+      "name_en": "Tracking & Measurement Specialist",
+      "group": "paid_media",
+      "domain": "paid_media",
+      "tags": [
+        "paid_media",
+        "tracking",
+        "specialist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/paid_media/tracking_specialist/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Tracking & Measurement Specialist",
+          "checksum": "sha256:1896d32a2822adda4959ffb3598fb925c3f14daf2a0ee1d721607d7a14b3b454"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/paid_media/tracking_specialist/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:7470ca978efb33ccc58f8e88e7880b39b22ce8f284c6efe73624e8451a3d6ee8"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:52:50Z",
+        "status": "official"
+      }
+    },
+    "project_management.jira_workflow_steward": {
+      "role_id": "project_management.jira_workflow_steward",
+      "name_cn": "Jira工作流管理员",
+      "name_en": "Jira Workflow Steward",
+      "group": "project_management",
+      "domain": "project_management",
+      "tags": [
+        "project_management",
+        "jira",
+        "workflow",
+        "steward"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/project_management/jira_workflow_steward/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Jira Workflow Steward",
+          "checksum": "sha256:545a7d994bd059d1500095910f325b6db9bc40b3381c83ae50c97948cd3e7dda"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/project_management/jira_workflow_steward/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:141292dc86c8ca47cf4e9bbf3dc40ce66275c72869e63018e498297c5cb377a9"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T04:54:33Z",
+        "status": "official"
+      }
+    },
+    "quality_security.mobile_security_coder": {
+      "role_id": "quality_security.mobile_security_coder",
+      "name_cn": "移动端安全编码专家",
+      "name_en": "Mobile Security Coder",
+      "group": "quality_security",
+      "domain": "quality_security_engineering",
+      "tags": [
+        "quality_security",
+        "mobile_security_coder"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/quality_security/mobile_security_coder/v1.yaml",
+          "created_at": "2026-04-22T08:03:29Z",
+          "description": "Imported from wshobson-agents: Mobile Security Coder",
+          "checksum": "sha256:4a667e5c4c661c54545c7cbb8a70b4472ee89ac5a7cf58171c40b800ee46bd39"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T08:03:29Z",
+        "updated_at": "2026-04-23T04:58:24Z",
+        "status": "official"
+      }
+    },
+    "research.scientific_literature_researcher": {
+      "role_id": "research.scientific_literature_researcher",
+      "name_cn": "科学文献研究员",
+      "name_en": "Scientific Literature Researcher",
+      "group": "research",
+      "domain": "research_analysis",
+      "tags": [
+        "research",
+        "scientific_literature_researcher"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/research/scientific_literature_researcher/v1.yaml",
+          "created_at": "2026-04-22T08:03:28Z",
+          "description": "Imported from voltagent-subagents: Scientific Literature Researcher",
+          "checksum": "sha256:3555cd92130d4a4b008f538ee8458d7695c36563716fec4032f8320cc93677a1"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T08:03:28Z",
+        "updated_at": "2026-04-23T05:03:21Z",
+        "status": "official"
+      }
+    },
+    "sales.account_strategist": {
+      "role_id": "sales.account_strategist",
+      "name_cn": "客户策略师",
+      "name_en": "Account Strategist",
+      "group": "sales",
+      "domain": "sales",
+      "tags": [
+        "sales",
+        "account",
+        "strategist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/sales/account_strategist/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Account Strategist",
+          "checksum": "sha256:086e8f4bc91099d024dfde823e802d672168d55f4b36cbf903c29be159eb6b9e"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/sales/account_strategist/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:4563061311bbecf1b6fb826a9b329b06f76704870bcca49c02c12db1a65f29b0"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T05:04:14Z",
+        "status": "official"
+      }
+    },
+    "sales.coach": {
+      "role_id": "sales.coach",
+      "name_cn": "销售教练",
+      "name_en": "Sales Coach",
+      "group": "sales",
+      "domain": "sales",
+      "tags": [
+        "sales",
+        "coach"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/sales/coach/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Sales Coach",
+          "checksum": "sha256:935e45d1d2941eb4241888a7851efe30843b0eb1cc127b727498a5fd95084146"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/sales/coach/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:92b5d12a1a1f60f7b1aadfbaabce16feb337e0d78718d6c3cf37efabf4521144"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T05:04:27Z",
+        "status": "official"
+      }
+    },
+    "sales.deal_strategist": {
+      "role_id": "sales.deal_strategist",
+      "name_cn": "交易策略师",
+      "name_en": "Deal Strategist",
+      "group": "sales",
+      "domain": "sales",
+      "tags": [
+        "sales",
+        "deal",
+        "strategist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/sales/deal_strategist/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Deal Strategist",
+          "checksum": "sha256:ad7fcfb1dc4c590aa6a52c4eb41824031988d3a643621fa63bc67f54f30fa320"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/sales/deal_strategist/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:90fb157d4739eab2871a28c15819eedd7ef880b1405907bcbe4d498372526c72"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T05:04:41Z",
+        "status": "official"
+      }
+    },
+    "sales.engineer": {
+      "role_id": "sales.engineer",
+      "name_cn": "销售工程师",
+      "name_en": "Sales Engineer",
+      "group": "sales",
+      "domain": "sales",
+      "tags": [
+        "sales",
+        "engineer"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/sales/engineer/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Sales Engineer",
+          "checksum": "sha256:6f78538922ad205eac934164393e4fdccc78e49a54d015dd117b4b5076557f7f"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/sales/engineer/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:c21fedfaf31b9766adf6274fa1632c714cf1306b1374fab6d73ce4fba2279bd5"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T05:05:10Z",
+        "status": "official"
+      }
+    },
+    "sales.outbound_strategist": {
+      "role_id": "sales.outbound_strategist",
+      "name_cn": "外向销售策略师",
+      "name_en": "Outbound Strategist",
+      "group": "sales",
+      "domain": "sales",
+      "tags": [
+        "sales",
+        "outbound",
+        "strategist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/sales/outbound_strategist/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Outbound Strategist",
+          "checksum": "sha256:f98628cee4649753b2b4c4474baacbda2042bf08dad601cf3f314aaa355177a9"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/sales/outbound_strategist/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:ea1114a3cb38a9a9eb01e00091cf40f3ab1c2f04a4aff8e86e09eecbe8bd344b"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T05:05:21Z",
+        "status": "official"
+      }
+    },
+    "sales.proposal_strategist": {
+      "role_id": "sales.proposal_strategist",
+      "name_cn": "提案策略师",
+      "name_en": "Proposal Strategist",
+      "group": "sales",
+      "domain": "sales",
+      "tags": [
+        "sales",
+        "proposal",
+        "strategist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/sales/proposal_strategist/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Proposal Strategist",
+          "checksum": "sha256:f6709f979e8fe45ecf4aed22fde96a4b689682339ae2240f69ed7e3dd74576c3"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/sales/proposal_strategist/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:c5631a74518a3a59e694cab0fb6f2d5b8c38bae7c4eee71c7b831a878fd487d0"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T05:05:51Z",
+        "status": "official"
+      }
+    },
+    "spatial_computing.xr_cockpit_interaction_specialist": {
+      "role_id": "spatial_computing.xr_cockpit_interaction_specialist",
+      "name_cn": "XR座舱交互专家",
+      "name_en": "XR Cockpit Interaction Specialist",
+      "group": "spatial_computing",
+      "domain": "spatial_computing",
+      "tags": [
+        "spatial_computing",
+        "cockpit",
+        "interaction",
+        "specialist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/spatial_computing/xr_cockpit_interaction_specialist/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: XR Cockpit Interaction Specialist",
+          "checksum": "sha256:ddbc544aee65236e1a4a249e8c187d4416048dc9defc51a7d5712b7ae757c86b"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/spatial_computing/xr_cockpit_interaction_specialist/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:92dd2aac66e6f1515fb41b07d91beabc2a3eac4de9caf7f327f71391000c4ffb"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T05:06:43Z",
+        "status": "official"
+      }
+    },
+    "specialized.civil_engineer": {
+      "role_id": "specialized.civil_engineer",
+      "name_cn": "土木工程师",
+      "name_en": "Civil Engineer",
+      "group": "specialized",
+      "domain": "specialized",
+      "tags": [
+        "specialized",
+        "civil",
+        "engineer"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/specialized/civil_engineer/v1.yaml",
+          "created_at": "2026-04-06T02:40:25Z",
+          "description": "Imported from agency-agents: Civil Engineer",
+          "checksum": "sha256:064fb778b72aa42eaabcdfea6671ca3d7610159acf914e9dae5615e4b76c9ce5"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/specialized/civil_engineer/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:6150c89a19966f18ffc5a5105468332ce6e2d28434dc059101b3986ba665a252"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:25Z",
+        "updated_at": "2026-04-23T05:08:34Z",
+        "status": "official"
+      }
+    },
+    "specialized.corporate_training_designer": {
+      "role_id": "specialized.corporate_training_designer",
+      "name_cn": "企业培训设计师",
+      "name_en": "Corporate Training Designer",
+      "group": "specialized",
+      "domain": "specialized",
+      "tags": [
+        "specialized",
+        "corporate",
+        "training",
+        "designer"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/specialized/corporate_training_designer/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Corporate Training Designer",
+          "checksum": "sha256:d871e4647973e7bbd748dac992a092ad37189e4385f54d27abe96f14e30a906f"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/specialized/corporate_training_designer/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:5c90b6f536a731c0053b372ca86839368ed34e8f95720123ef7bf8fa5c81634d"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T05:09:01Z",
+        "status": "official"
+      }
+    },
+    "specialized.cultural_intelligence_strategist": {
+      "role_id": "specialized.cultural_intelligence_strategist",
+      "name_cn": "文化智能策略师",
+      "name_en": "Cultural Intelligence Strategist",
+      "group": "specialized",
+      "domain": "specialized",
+      "tags": [
+        "specialized",
+        "cultural",
+        "intelligence",
+        "strategist"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/specialized/cultural_intelligence_strategist/v1.yaml",
+          "created_at": "2026-04-06T02:40:25Z",
+          "description": "Imported from agency-agents: Cultural Intelligence Strategist",
+          "checksum": "sha256:e89feac7c82ac66ee53ba1c7524191d1a7022760fa7be0967ad1c803e518b290"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/specialized/cultural_intelligence_strategist/v2.yaml",
+          "created_at": "2026-04-06T04:09:42Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:a692022cf51f9788f89d7363fddbc404c7ee4fe46b64e2585501b9ee76840eb3"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:25Z",
+        "updated_at": "2026-04-23T05:09:17Z",
+        "status": "official"
+      }
+    },
+    "specialized.developer_advocate": {
+      "role_id": "specialized.developer_advocate",
+      "name_cn": "开发者关系布道师",
+      "name_en": "Developer Advocate",
+      "group": "specialized",
+      "domain": "specialized",
+      "tags": [
+        "specialized",
+        "developer",
+        "advocate"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/specialized/developer_advocate/v1.yaml",
+          "created_at": "2026-04-06T02:40:25Z",
+          "description": "Imported from agency-agents: Developer Advocate",
+          "checksum": "sha256:4d03758acf56b658d999018a4ee35b4894eb91177155d87854a3be36c181f1e7"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/specialized/developer_advocate/v2.yaml",
+          "created_at": "2026-04-06T04:09:42Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:eedfe390140e4a8ed6ef0ee8321a1697c1e7a723a38457ff0af321b63ede4662"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:25Z",
+        "updated_at": "2026-04-23T05:09:49Z",
+        "status": "official"
+      }
+    },
+    "specialized.document_generator": {
+      "role_id": "specialized.document_generator",
+      "name_cn": "文档生成专员",
+      "name_en": "Document Generator",
+      "group": "specialized",
+      "domain": "specialized",
+      "tags": [
+        "specialized",
+        "document",
+        "generator"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/specialized/document_generator/v1.yaml",
+          "created_at": "2026-04-06T02:40:25Z",
+          "description": "Imported from agency-agents: Document Generator",
+          "checksum": "sha256:902d13d1bcd37c6b541aa811008f42c8769020287b8944d08826dcd81a6a1de0"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/specialized/document_generator/v2.yaml",
+          "created_at": "2026-04-06T04:09:42Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:0b70953c349ae1e382cd2c25e7eb342567910248276dbef24006134e8941ff27"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:25Z",
+        "updated_at": "2026-04-23T05:09:59Z",
+        "status": "official"
+      }
+    },
+    "specialized.french_consulting_market": {
+      "role_id": "specialized.french_consulting_market",
+      "name_cn": "法国咨询市场导航师",
+      "name_en": "French Consulting Market Navigator",
+      "group": "specialized",
+      "domain": "specialized",
+      "tags": [
+        "specialized",
+        "french",
+        "consulting",
+        "market"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/specialized/french_consulting_market/v1.yaml",
+          "created_at": "2026-04-06T02:40:25Z",
+          "description": "Imported from agency-agents: French Consulting Market Navigator",
+          "checksum": "sha256:fa7195a990a8edf4ec45a64a96960d37e4fef8240995e1284a506e419b3bf8e9"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/specialized/french_consulting_market/v2.yaml",
+          "created_at": "2026-04-06T04:09:42Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:9ae00ac241a5de4dace6271f01ee71cc2695cc4a6eabffbe71b560cfdde14e4c"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:25Z",
+        "updated_at": "2026-04-23T05:10:13Z",
+        "status": "official"
+      }
+    },
+    "specialized.government_digital_presales_consultant": {
+      "role_id": "specialized.government_digital_presales_consultant",
+      "name_cn": "政府数字化售前顾问",
+      "name_en": "Government Digital Presales Consultant",
+      "group": "specialized",
+      "domain": "specialized",
+      "tags": [
+        "specialized",
+        "government",
+        "digital",
+        "presales",
+        "consultant"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/specialized/government_digital_presales_consultant/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Government Digital Presales Consultant",
+          "checksum": "sha256:707835ef94a41e680e39fabceba7aff8380fe7a07dad408a547d81061d1cde11"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/specialized/government_digital_presales_consultant/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:b1de7d62ecf299f42db01753590d6ae30312ad35d4e96288c2e535e398f0cf68"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T05:10:28Z",
+        "status": "official"
+      }
+    },
+    "specialized.healthcare_marketing_compliance": {
+      "role_id": "specialized.healthcare_marketing_compliance",
+      "name_cn": "医疗健康营销合规专员",
+      "name_en": "Healthcare Marketing Compliance Specialist",
+      "group": "specialized",
+      "domain": "specialized",
+      "tags": [
+        "specialized",
+        "healthcare",
+        "marketing",
+        "compliance"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/specialized/healthcare_marketing_compliance/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Healthcare Marketing Compliance Specialist",
+          "checksum": "sha256:7c67f91037926237990f946e260f5b394bf40a7bf0b0e5ada45ab2ff3e0bc515"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/specialized/healthcare_marketing_compliance/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:046659f5be401aa4def3a621635d8cd146012982c6e010beb8829d974d477ddb"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T05:10:50Z",
+        "status": "official"
+      }
+    },
+    "specialized.identity_graph_operator": {
+      "role_id": "specialized.identity_graph_operator",
+      "name_cn": "身份图谱运营师",
+      "name_en": "Identity Graph Operator",
+      "group": "specialized",
+      "domain": "specialized",
+      "tags": [
+        "specialized",
+        "identity",
+        "graph",
+        "operator"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/specialized/identity_graph_operator/v1.yaml",
+          "created_at": "2026-04-06T02:40:24Z",
+          "description": "Imported from agency-agents: Identity Graph Operator",
+          "checksum": "sha256:b27af9ff713728e7ac0eb9aba2472000cb29afdf280e9cd812672d229699b852"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/specialized/identity_graph_operator/v2.yaml",
+          "created_at": "2026-04-06T04:09:41Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:c4bf83574895baba381c21a019832b43325f7cdaf04de8d386c0b310be45e50b"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:24Z",
+        "updated_at": "2026-04-23T05:11:03Z",
+        "status": "official"
+      }
+    },
+    "specialized.study_abroad_advisor": {
+      "role_id": "specialized.study_abroad_advisor",
+      "name_cn": "留学顾问",
+      "name_en": "Study Abroad Advisor",
+      "group": "specialized",
+      "domain": "specialized",
+      "tags": [
+        "specialized",
+        "study",
+        "abroad",
+        "advisor"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/specialized/study_abroad_advisor/v1.yaml",
+          "created_at": "2026-04-06T02:40:25Z",
+          "description": "Imported from agency-agents: Study Abroad Advisor",
+          "checksum": "sha256:43d1de65a1fc15433ea56d9777a38a73c6b0633dcd086caa9001dc3c4e61915c"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/specialized/study_abroad_advisor/v2.yaml",
+          "created_at": "2026-04-06T04:09:42Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:4a76ebce8cadaac5da5cf299b6a9302e4f2bf258cf67a062a352baaebee1571e"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:25Z",
+        "updated_at": "2026-04-23T05:13:21Z",
+        "status": "official"
+      }
+    },
+    "specialized_v.mobile_app_developer": {
+      "role_id": "specialized_v.mobile_app_developer",
+      "name_cn": "移动 App 开发工程师",
+      "name_en": "Mobile App Developer",
+      "group": "specialized_v",
+      "domain": "specialized_vertical",
+      "tags": [
+        "specialized_v",
+        "mobile_app_developer"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/specialized_v/mobile_app_developer/v1.yaml",
+          "created_at": "2026-04-22T08:03:28Z",
+          "description": "Imported from voltagent-subagents: Mobile App Developer",
+          "checksum": "sha256:c34bef005cf089209c7e3286ebe9b9e4fae6312baa4c094654ad6e0d45adadcd"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T08:03:28Z",
+        "updated_at": "2026-04-23T05:16:44Z",
+        "status": "official"
+      }
+    },
+    "support.executive_summary_generator": {
+      "role_id": "support.executive_summary_generator",
+      "name_cn": "执行摘要生成师",
+      "name_en": "Executive Summary Generator",
+      "group": "support",
+      "domain": "operations_support",
+      "tags": [
+        "support",
+        "executive",
+        "summary",
+        "generator"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/support/executive_summary_generator/v1.yaml",
+          "created_at": "2026-04-06T02:40:25Z",
+          "description": "Imported from agency-agents: Executive Summary Generator",
+          "checksum": "sha256:2bd9b6a9166efcc68706b77d4495da320572db103ee6d81437767ac78d669c32"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/support/executive_summary_generator/v2.yaml",
+          "created_at": "2026-04-06T04:09:42Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:e4e18df355f3676c199fadf589d237651ba0b5d741e3d92f515a7d0145bb4103"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:25Z",
+        "updated_at": "2026-04-23T05:20:24Z",
+        "status": "official"
+      }
+    },
+    "testing.accessibility_auditor": {
+      "role_id": "testing.accessibility_auditor",
+      "name_cn": "无障碍审计师",
+      "name_en": "Accessibility Auditor",
+      "group": "testing",
+      "domain": "quality_assurance",
+      "tags": [
+        "testing",
+        "accessibility",
+        "auditor"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/testing/accessibility_auditor/v1.yaml",
+          "created_at": "2026-04-06T02:40:25Z",
+          "description": "Imported from agency-agents: Accessibility Auditor",
+          "checksum": "sha256:c01b58488dada2f5483a3754f9afb2213bb7ed39b6141a680702b10cafa95335"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/testing/accessibility_auditor/v2.yaml",
+          "created_at": "2026-04-06T04:09:42Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:76be6c497fb26866b6a3a3532e0f0c4165f45ff70de4b5dc452b99e40b35602d"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:25Z",
+        "updated_at": "2026-04-23T05:21:44Z",
+        "status": "official"
+      }
+    },
+    "testing.reality_checker": {
+      "role_id": "testing.reality_checker",
+      "name_cn": "现实核验工程师",
+      "name_en": "Reality Checker",
+      "group": "testing",
+      "domain": "quality_assurance",
+      "tags": [
+        "testing",
+        "reality",
+        "checker"
+      ],
+      "latest_version": "2",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/testing/reality_checker/v1.yaml",
+          "created_at": "2026-04-06T02:40:25Z",
+          "description": "Imported from agency-agents: Reality Checker",
+          "checksum": "sha256:ed8050303f9f47720f27f945b68557c23ddd6600f28003c29e48bca861219c06"
+        },
+        "2": {
+          "version": "2",
+          "file_path": "roles/testing/reality_checker/v2.yaml",
+          "created_at": "2026-04-06T04:09:42Z",
+          "description": "Source-aware reimport from upstream",
+          "checksum": "sha256:33da521396337c952e3658574bc7b8e0928942bb39a21223b97a1a3bb790913c"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-06T02:40:25Z",
+        "updated_at": "2026-04-23T05:22:35Z",
+        "status": "official"
+      }
+    },
+    "tooling.jasmine": {
+      "role_id": "tooling.jasmine",
+      "name_cn": "Jasmine 专家",
+      "name_en": "Jasmine Expert",
+      "group": "tooling",
+      "domain": "developer_tooling",
+      "tags": [
+        "tooling",
+        "jasmine"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/tooling/jasmine/v1.yaml",
+          "created_at": "2026-04-22T07:30:52Z",
+          "description": "Imported from 0xfurai-subagents: Jasmine Expert",
+          "checksum": "sha256:cba5d0ab2e9ac4bb08fad59caed19b665415fd3463c76bc9adfc1c6f252807e4"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:52Z",
+        "updated_at": "2026-04-23T05:24:13Z",
+        "status": "official"
+      }
+    },
+    "tooling.mocha": {
+      "role_id": "tooling.mocha",
+      "name_cn": "Mocha 专家",
+      "name_en": "Mocha Expert",
+      "group": "tooling",
+      "domain": "developer_tooling",
+      "tags": [
+        "tooling",
+        "mocha"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/tooling/mocha/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: Mocha Expert",
+          "checksum": "sha256:29ab0f3aba91f77ff9813387cfc88a835a44d0786910b95aa25faaf1184018c9"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T05:24:40Z",
+        "status": "official"
+      }
+    },
+    "tooling.playwright": {
+      "role_id": "tooling.playwright",
+      "name_cn": "Playwright 专家",
+      "name_en": "Playwright Expert",
+      "group": "tooling",
+      "domain": "developer_tooling",
+      "tags": [
+        "tooling",
+        "playwright"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/tooling/playwright/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: Playwright Expert",
+          "checksum": "sha256:e94d7f492cd4654528bb04a90fc16ab8504d29401b54e16cd60785b203762d17"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T05:24:57Z",
+        "status": "official"
+      }
+    },
+    "tooling.puppeteer": {
+      "role_id": "tooling.puppeteer",
+      "name_cn": "Puppeteer 专家",
+      "name_en": "Puppeteer Expert",
+      "group": "tooling",
+      "domain": "developer_tooling",
+      "tags": [
+        "tooling",
+        "puppeteer"
+      ],
+      "latest_version": "1",
+      "versions": {
+        "1": {
+          "version": "1",
+          "file_path": "roles/tooling/puppeteer/v1.yaml",
+          "created_at": "2026-04-22T07:30:53Z",
+          "description": "Imported from 0xfurai-subagents: Puppeteer Expert",
+          "checksum": "sha256:f80e6112400b46f2865c90e36ccfb5d0f1e4ef040d3edd1c66301bbbc83cee3c"
+        }
+      },
+      "meta": {
+        "author": "system",
+        "created_at": "2026-04-22T07:30:53Z",
+        "updated_at": "2026-04-23T05:25:13Z",
+        "status": "official"
+      }
+    }
+  },
+  "groups": {
+    "academic": [
+      "academic.anthropologist",
+      "academic.historian"
+    ],
+    "biz_product": [
+      "biz_product.wordpress_master"
+    ],
+    "core_dev": [
+      "core_dev.mobile_developer"
+    ],
+    "data_ml": [
+      "data_ml.numpy",
+      "data_ml.pytorch",
+      "data_ml.scikit_learn"
+    ],
+    "database": [
+      "database.flyway",
+      "database.opensearch",
+      "database.sequelize",
+      "database.sqlite",
+      "database.typeorm"
+    ],
+    "dev_exp": [
+      "dev_exp.c4_container"
+    ],
+    "ecommerce": [
+      "ecommerce.customer_service_ai"
+    ],
+    "engineering": [
+      "engineering.backend_architect",
+      "engineering.embedded_firmware_engineer",
+      "engineering.filament_optimization_specialist",
+      "engineering.incident_response_commander",
+      "engineering.security_engineer",
+      "engineering.sre",
+      "engineering.technical_writer",
+      "engineering.wechat_mini_program_developer"
+    ],
+    "framework": [
+      "framework.android",
+      "framework.aspnet_core",
+      "framework.css",
+      "framework.django",
+      "framework.fastify",
+      "framework.flutter",
+      "framework.gin",
+      "framework.nextjs",
+      "framework.svelte",
+      "framework.tauri",
+      "framework.vue"
+    ],
+    "game_development": [
+      "game_development.level_designer",
+      "game_development.narrative_designer"
+    ],
+    "infrastructure": [
+      "infrastructure.loki",
+      "infrastructure.prometheus",
+      "infrastructure.pulumi",
+      "infrastructure.terraform"
+    ],
+    "integration": [
+      "integration.auth0",
+      "integration.bullmq",
+      "integration.celery",
+      "integration.graphql",
+      "integration.openapi",
+      "integration.rabbitmq",
+      "integration.sns",
+      "integration.sqs",
+      "integration.websocket"
+    ],
+    "language": [
+      "language.bash",
+      "language.elixir",
+      "language.erlang",
+      "language.java",
+      "language.kotlin",
+      "language.ocaml",
+      "language.rust"
+    ],
+    "language_specialist": [
+      "language_specialist.cpp_pro",
+      "language_specialist.julia_pro",
+      "language_specialist.rust_pro",
+      "language_specialist.typescript_pro"
+    ],
+    "marketing": [
+      "marketing.baidu_seo_specialist",
+      "marketing.bilibili_content_strategist",
+      "marketing.book_co_author",
+      "marketing.china_ecommerce_operator",
+      "marketing.content_creator",
+      "marketing.cross_border_ecommerce",
+      "marketing.douyin_strategist",
+      "marketing.growth_hacker",
+      "marketing.kuaishou_strategist",
+      "marketing.podcast_strategist",
+      "marketing.seo_specialist",
+      "marketing.social_media_strategist",
+      "marketing.twitter_engager",
+      "marketing.zhihu_strategist"
+    ],
+    "paid_media": [
+      "paid_media.ppc_strategist",
+      "paid_media.programmatic_buyer",
+      "paid_media.search_query_analyst",
+      "paid_media.tracking_specialist"
+    ],
+    "project_management": [
+      "project_management.jira_workflow_steward"
+    ],
+    "quality_security": [
+      "quality_security.mobile_security_coder"
+    ],
+    "research": [
+      "research.scientific_literature_researcher"
+    ],
+    "sales": [
+      "sales.account_strategist",
+      "sales.coach",
+      "sales.deal_strategist",
+      "sales.engineer",
+      "sales.outbound_strategist",
+      "sales.proposal_strategist"
+    ],
+    "spatial_computing": [
+      "spatial_computing.xr_cockpit_interaction_specialist"
+    ],
+    "specialized": [
+      "specialized.civil_engineer",
+      "specialized.corporate_training_designer",
+      "specialized.cultural_intelligence_strategist",
+      "specialized.developer_advocate",
+      "specialized.document_generator",
+      "specialized.french_consulting_market",
+      "specialized.government_digital_presales_consultant",
+      "specialized.healthcare_marketing_compliance",
+      "specialized.identity_graph_operator",
+      "specialized.study_abroad_advisor"
+    ],
+    "specialized_v": [
+      "specialized_v.mobile_app_developer"
+    ],
+    "support": [
+      "support.executive_summary_generator"
+    ],
+    "testing": [
+      "testing.accessibility_auditor",
+      "testing.reality_checker"
+    ],
+    "tooling": [
+      "tooling.jasmine",
+      "tooling.mocha",
+      "tooling.playwright",
+      "tooling.puppeteer"
+    ]
+  },
+  "tag_index": {
+    "abroad": [
+      "specialized.study_abroad_advisor"
+    ],
+    "academic": [
+      "academic.anthropologist",
+      "academic.historian"
+    ],
+    "accessibility": [
+      "testing.accessibility_auditor"
+    ],
+    "account": [
+      "sales.account_strategist"
+    ],
+    "advisor": [
+      "specialized.study_abroad_advisor"
+    ],
+    "advocate": [
+      "specialized.developer_advocate"
+    ],
+    "agf-001": [
+      "ecommerce.customer_service_ai"
+    ],
+    "ai-agent": [
+      "ecommerce.customer_service_ai"
+    ],
+    "analyst": [
+      "paid_media.search_query_analyst"
+    ],
+    "android": [
+      "framework.android"
+    ],
+    "anthropologist": [
+      "academic.anthropologist"
+    ],
+    "architect": [
+      "engineering.backend_architect"
+    ],
+    "aspnet-core": [
+      "framework.aspnet_core"
+    ],
+    "aspnet_core": [
+      "framework.aspnet_core"
+    ],
+    "auditor": [
+      "testing.accessibility_auditor"
+    ],
+    "auth0": [
+      "integration.auth0"
+    ],
+    "author": [
+      "marketing.book_co_author"
+    ],
+    "backend": [
+      "engineering.backend_architect"
+    ],
+    "baidu": [
+      "marketing.baidu_seo_specialist"
+    ],
+    "bash": [
+      "language.bash"
+    ],
+    "bilibili": [
+      "marketing.bilibili_content_strategist"
+    ],
+    "biz_product": [
+      "biz_product.wordpress_master"
+    ],
+    "book": [
+      "marketing.book_co_author"
+    ],
+    "border": [
+      "marketing.cross_border_ecommerce"
+    ],
+    "bullmq": [
+      "integration.bullmq"
+    ],
+    "buyer": [
+      "paid_media.programmatic_buyer"
+    ],
+    "c4_container": [
+      "dev_exp.c4_container"
+    ],
+    "celery": [
+      "integration.celery"
+    ],
+    "checker": [
+      "testing.reality_checker"
+    ],
+    "china": [
+      "marketing.china_ecommerce_operator"
+    ],
+    "civil": [
+      "specialized.civil_engineer"
+    ],
+    "coach": [
+      "sales.coach"
+    ],
+    "cockpit": [
+      "spatial_computing.xr_cockpit_interaction_specialist"
+    ],
+    "commander": [
+      "engineering.incident_response_commander"
+    ],
+    "compliance": [
+      "specialized.healthcare_marketing_compliance"
+    ],
+    "consultant": [
+      "specialized.government_digital_presales_consultant"
+    ],
+    "consulting": [
+      "specialized.french_consulting_market"
+    ],
+    "content": [
+      "marketing.bilibili_content_strategist",
+      "marketing.content_creator"
+    ],
+    "core_dev": [
+      "core_dev.mobile_developer"
+    ],
+    "corporate": [
+      "specialized.corporate_training_designer"
+    ],
+    "cpp_pro": [
+      "language_specialist.cpp_pro"
+    ],
+    "creator": [
+      "marketing.content_creator"
+    ],
+    "cross": [
+      "marketing.cross_border_ecommerce"
+    ],
+    "css": [
+      "framework.css"
+    ],
+    "cultural": [
+      "specialized.cultural_intelligence_strategist"
+    ],
+    "customer-service": [
+      "ecommerce.customer_service_ai"
+    ],
+    "data_ml": [
+      "data_ml.numpy",
+      "data_ml.pytorch",
+      "data_ml.scikit_learn"
+    ],
+    "database": [
+      "database.flyway",
+      "database.opensearch",
+      "database.sequelize",
+      "database.sqlite",
+      "database.typeorm"
+    ],
+    "deal": [
+      "sales.deal_strategist"
+    ],
+    "designer": [
+      "game_development.level_designer",
+      "game_development.narrative_designer",
+      "specialized.corporate_training_designer"
+    ],
+    "dev_exp": [
+      "dev_exp.c4_container"
+    ],
+    "developer": [
+      "engineering.wechat_mini_program_developer",
+      "specialized.developer_advocate"
+    ],
+    "digital": [
+      "specialized.government_digital_presales_consultant"
+    ],
+    "django": [
+      "framework.django"
+    ],
+    "document": [
+      "specialized.document_generator"
+    ],
+    "douyin": [
+      "marketing.douyin_strategist"
+    ],
+    "ecommerce": [
+      "ecommerce.customer_service_ai",
+      "marketing.china_ecommerce_operator",
+      "marketing.cross_border_ecommerce"
+    ],
+    "elixir": [
+      "language.elixir"
+    ],
+    "embedded": [
+      "engineering.embedded_firmware_engineer"
+    ],
+    "engager": [
+      "marketing.twitter_engager"
+    ],
+    "engineer": [
+      "engineering.embedded_firmware_engineer",
+      "engineering.security_engineer",
+      "sales.engineer",
+      "specialized.civil_engineer"
+    ],
+    "engineering": [
+      "engineering.backend_architect",
+      "engineering.embedded_firmware_engineer",
+      "engineering.filament_optimization_specialist",
+      "engineering.incident_response_commander",
+      "engineering.security_engineer",
+      "engineering.sre",
+      "engineering.technical_writer",
+      "engineering.wechat_mini_program_developer"
+    ],
+    "erlang": [
+      "language.erlang"
+    ],
+    "executive": [
+      "support.executive_summary_generator"
+    ],
+    "fastify": [
+      "framework.fastify"
+    ],
+    "filament": [
+      "engineering.filament_optimization_specialist"
+    ],
+    "firmware": [
+      "engineering.embedded_firmware_engineer"
+    ],
+    "flutter": [
+      "framework.flutter"
+    ],
+    "flyway": [
+      "database.flyway"
+    ],
+    "framework": [
+      "framework.android",
+      "framework.aspnet_core",
+      "framework.css",
+      "framework.django",
+      "framework.fastify",
+      "framework.flutter",
+      "framework.gin",
+      "framework.nextjs",
+      "framework.svelte",
+      "framework.tauri",
+      "framework.vue"
+    ],
+    "french": [
+      "specialized.french_consulting_market"
+    ],
+    "game_development": [
+      "game_development.level_designer",
+      "game_development.narrative_designer"
+    ],
+    "generator": [
+      "specialized.document_generator",
+      "support.executive_summary_generator"
+    ],
+    "gin": [
+      "framework.gin"
+    ],
+    "government": [
+      "specialized.government_digital_presales_consultant"
+    ],
+    "graph": [
+      "specialized.identity_graph_operator"
+    ],
+    "graphql": [
+      "integration.graphql"
+    ],
+    "growth": [
+      "marketing.growth_hacker"
+    ],
+    "hacker": [
+      "marketing.growth_hacker"
+    ],
+    "healthcare": [
+      "specialized.healthcare_marketing_compliance"
+    ],
+    "historian": [
+      "academic.historian"
+    ],
+    "identity": [
+      "specialized.identity_graph_operator"
+    ],
+    "incident": [
+      "engineering.incident_response_commander"
+    ],
+    "infrastructure": [
+      "infrastructure.loki",
+      "infrastructure.prometheus",
+      "infrastructure.pulumi",
+      "infrastructure.terraform"
+    ],
+    "integration": [
+      "integration.auth0",
+      "integration.bullmq",
+      "integration.celery",
+      "integration.graphql",
+      "integration.openapi",
+      "integration.rabbitmq",
+      "integration.sns",
+      "integration.sqs",
+      "integration.websocket"
+    ],
+    "intelligence": [
+      "specialized.cultural_intelligence_strategist"
+    ],
+    "interaction": [
+      "spatial_computing.xr_cockpit_interaction_specialist"
+    ],
+    "jasmine": [
+      "tooling.jasmine"
+    ],
+    "java": [
+      "language.java"
+    ],
+    "jira": [
+      "project_management.jira_workflow_steward"
+    ],
+    "julia_pro": [
+      "language_specialist.julia_pro"
+    ],
+    "kotlin": [
+      "language.kotlin"
+    ],
+    "kuaishou": [
+      "marketing.kuaishou_strategist"
+    ],
+    "language": [
+      "language.bash",
+      "language.elixir",
+      "language.erlang",
+      "language.java",
+      "language.kotlin",
+      "language.ocaml",
+      "language.rust"
+    ],
+    "language_specialist": [
+      "language_specialist.cpp_pro",
+      "language_specialist.julia_pro",
+      "language_specialist.rust_pro",
+      "language_specialist.typescript_pro"
+    ],
+    "level": [
+      "game_development.level_designer"
+    ],
+    "loki": [
+      "infrastructure.loki"
+    ],
+    "market": [
+      "specialized.french_consulting_market"
+    ],
+    "marketing": [
+      "marketing.baidu_seo_specialist",
+      "marketing.bilibili_content_strategist",
+      "marketing.book_co_author",
+      "marketing.china_ecommerce_operator",
+      "marketing.content_creator",
+      "marketing.cross_border_ecommerce",
+      "marketing.douyin_strategist",
+      "marketing.growth_hacker",
+      "marketing.kuaishou_strategist",
+      "marketing.podcast_strategist",
+      "marketing.seo_specialist",
+      "marketing.social_media_strategist",
+      "marketing.twitter_engager",
+      "marketing.zhihu_strategist",
+      "specialized.healthcare_marketing_compliance"
+    ],
+    "media": [
+      "marketing.social_media_strategist"
+    ],
+    "mini": [
+      "engineering.wechat_mini_program_developer"
+    ],
+    "mobile_app_developer": [
+      "specialized_v.mobile_app_developer"
+    ],
+    "mobile_developer": [
+      "core_dev.mobile_developer"
+    ],
+    "mobile_security_coder": [
+      "quality_security.mobile_security_coder"
+    ],
+    "mocha": [
+      "tooling.mocha"
+    ],
+    "narrative": [
+      "game_development.narrative_designer"
+    ],
+    "nextjs": [
+      "framework.nextjs"
+    ],
+    "numpy": [
+      "data_ml.numpy"
+    ],
+    "ocaml": [
+      "language.ocaml"
+    ],
+    "openapi": [
+      "integration.openapi"
+    ],
+    "opensearch": [
+      "database.opensearch"
+    ],
+    "operator": [
+      "marketing.china_ecommerce_operator",
+      "specialized.identity_graph_operator"
+    ],
+    "optimization": [
+      "engineering.filament_optimization_specialist"
+    ],
+    "outbound": [
+      "sales.outbound_strategist"
+    ],
+    "paid_media": [
+      "paid_media.ppc_strategist",
+      "paid_media.programmatic_buyer",
+      "paid_media.search_query_analyst",
+      "paid_media.tracking_specialist"
+    ],
+    "playwright": [
+      "tooling.playwright"
+    ],
+    "podcast": [
+      "marketing.podcast_strategist"
+    ],
+    "ppc": [
+      "paid_media.ppc_strategist"
+    ],
+    "presales": [
+      "specialized.government_digital_presales_consultant"
+    ],
+    "program": [
+      "engineering.wechat_mini_program_developer"
+    ],
+    "programmatic": [
+      "paid_media.programmatic_buyer"
+    ],
+    "project_management": [
+      "project_management.jira_workflow_steward"
+    ],
+    "prometheus": [
+      "infrastructure.prometheus"
+    ],
+    "proposal": [
+      "sales.proposal_strategist"
+    ],
+    "pulumi": [
+      "infrastructure.pulumi"
+    ],
+    "puppeteer": [
+      "tooling.puppeteer"
+    ],
+    "pytorch": [
+      "data_ml.pytorch"
+    ],
+    "quality_security": [
+      "quality_security.mobile_security_coder"
+    ],
+    "query": [
+      "paid_media.search_query_analyst"
+    ],
+    "rabbitmq": [
+      "integration.rabbitmq"
+    ],
+    "reality": [
+      "testing.reality_checker"
+    ],
+    "research": [
+      "research.scientific_literature_researcher"
+    ],
+    "response": [
+      "engineering.incident_response_commander"
+    ],
+    "rust": [
+      "language.rust"
+    ],
+    "rust_pro": [
+      "language_specialist.rust_pro"
+    ],
+    "sales": [
+      "sales.account_strategist",
+      "sales.coach",
+      "sales.deal_strategist",
+      "sales.engineer",
+      "sales.outbound_strategist",
+      "sales.proposal_strategist"
+    ],
+    "scientific_literature_researcher": [
+      "research.scientific_literature_researcher"
+    ],
+    "scikit-learn": [
+      "data_ml.scikit_learn"
+    ],
+    "scikit_learn": [
+      "data_ml.scikit_learn"
+    ],
+    "search": [
+      "paid_media.search_query_analyst"
+    ],
+    "security": [
+      "engineering.security_engineer"
+    ],
+    "seo": [
+      "marketing.baidu_seo_specialist",
+      "marketing.seo_specialist"
+    ],
+    "sequelize": [
+      "database.sequelize"
+    ],
+    "sns": [
+      "integration.sns"
+    ],
+    "social": [
+      "marketing.social_media_strategist"
+    ],
+    "spatial_computing": [
+      "spatial_computing.xr_cockpit_interaction_specialist"
+    ],
+    "specialist": [
+      "engineering.filament_optimization_specialist",
+      "marketing.baidu_seo_specialist",
+      "marketing.seo_specialist",
+      "paid_media.tracking_specialist",
+      "spatial_computing.xr_cockpit_interaction_specialist"
+    ],
+    "specialized": [
+      "specialized.civil_engineer",
+      "specialized.corporate_training_designer",
+      "specialized.cultural_intelligence_strategist",
+      "specialized.developer_advocate",
+      "specialized.document_generator",
+      "specialized.french_consulting_market",
+      "specialized.government_digital_presales_consultant",
+      "specialized.healthcare_marketing_compliance",
+      "specialized.identity_graph_operator",
+      "specialized.study_abroad_advisor"
+    ],
+    "specialized_v": [
+      "specialized_v.mobile_app_developer"
+    ],
+    "sqlite": [
+      "database.sqlite"
+    ],
+    "sqs": [
+      "integration.sqs"
+    ],
+    "sre": [
+      "engineering.sre"
+    ],
+    "steward": [
+      "project_management.jira_workflow_steward"
+    ],
+    "strategist": [
+      "marketing.bilibili_content_strategist",
+      "marketing.douyin_strategist",
+      "marketing.kuaishou_strategist",
+      "marketing.podcast_strategist",
+      "marketing.social_media_strategist",
+      "marketing.zhihu_strategist",
+      "paid_media.ppc_strategist",
+      "sales.account_strategist",
+      "sales.deal_strategist",
+      "sales.outbound_strategist",
+      "sales.proposal_strategist",
+      "specialized.cultural_intelligence_strategist"
+    ],
+    "study": [
+      "specialized.study_abroad_advisor"
+    ],
+    "summary": [
+      "support.executive_summary_generator"
+    ],
+    "support": [
+      "support.executive_summary_generator"
+    ],
+    "svelte": [
+      "framework.svelte"
+    ],
+    "tauri": [
+      "framework.tauri"
+    ],
+    "technical": [
+      "engineering.technical_writer"
+    ],
+    "terraform": [
+      "infrastructure.terraform"
+    ],
+    "testing": [
+      "testing.accessibility_auditor",
+      "testing.reality_checker"
+    ],
+    "tooling": [
+      "tooling.jasmine",
+      "tooling.mocha",
+      "tooling.playwright",
+      "tooling.puppeteer"
+    ],
+    "tracking": [
+      "paid_media.tracking_specialist"
+    ],
+    "training": [
+      "specialized.corporate_training_designer"
+    ],
+    "twitter": [
+      "marketing.twitter_engager"
+    ],
+    "typeorm": [
+      "database.typeorm"
+    ],
+    "typescript_pro": [
+      "language_specialist.typescript_pro"
+    ],
+    "vue": [
+      "framework.vue"
+    ],
+    "websocket": [
+      "integration.websocket"
+    ],
+    "wechat": [
+      "engineering.wechat_mini_program_developer"
+    ],
+    "wordpress_master": [
+      "biz_product.wordpress_master"
+    ],
+    "workflow": [
+      "project_management.jira_workflow_steward"
+    ],
+    "writer": [
+      "engineering.technical_writer"
+    ],
+    "zhihu": [
+      "marketing.zhihu_strategist"
+    ]
+  }
+}

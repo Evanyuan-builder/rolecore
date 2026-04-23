@@ -1,0 +1,79 @@
+# ============================================================
+# RoleCore 角色资产 Schema v1.0
+# 文件路径规范: roles/{group}/{role_name}/v{version}.yaml
+# role_id 命名规范: {group}.{role_name}，全小写，下划线分隔
+# ============================================================
+
+# ---------- 元数据 ----------
+meta:
+  role_id: "group.role_name"          # 必填，全局唯一 ID
+  version: "1"                         # 必填，正整数字符串
+  group: "group"                       # 必填，与目录层级一致
+  tags: []                             # 必填，检索标签列表
+  status: "active"                     # active | deprecated | draft
+  created_at: ""                       # ISO8601，系统自动填入
+  updated_at: ""                       # ISO8601，系统自动填入
+  author: "system"                     # 创建者
+  description: ""                      # 本版本变更说明
+
+# ---------- 字段域 1: 岗位身份 ----------
+identity:
+  name_cn: ""                          # 必填，中文岗位名称
+  name_en: ""                          # 必填，英文岗位名称
+  domain: ""                           # 必填，专业领域标识
+  positioning: |                       # 必填，岗位定位描述（多行文本）
+    描述该岗位在组织中的核心定位。
+
+# ---------- 字段域 2: 岗位使命与目标 ----------
+mission:
+  summary: |                           # 必填，使命概述
+    这个岗位为什么存在。
+  core_accountability:                 # 必填，核心负责事项列表
+    - ""
+
+# ---------- 字段域 3: 职责边界 ----------
+boundaries:
+  can_do:                              # 必填，职责内可以做的事
+    - ""
+  cannot_do:                           # 必填，明确禁止或超出边界的事
+    - ""
+  escalate_when:                       # 必填，需要升级或移交的触发条件
+    - ""
+
+# ---------- 字段域 4: 输入与输出 ----------
+io:
+  inputs:                              # 必填，接收的信息/文件/请求类型
+    - ""
+  outputs:                             # 必填，产出的结果/文档/交付物
+    - ""
+
+# ---------- 字段域 5: 行为风格与决策倾向 ----------
+behavior:
+  communication_style: ""             # 必填，沟通风格
+  risk_preference: ""                 # 必填，风险偏好
+  decision_approach: ""              # 必填，决策方式
+  collaboration_mode: ""             # 必填，协作方式
+
+# ---------- 字段域 6: 工作流模板 ----------
+workflows:                             # 必填，列表，至少一个
+  - name: ""                           # 工作流名称
+    steps:                             # 步骤列表
+      - ""
+
+# ---------- 字段域 7: 能力需求 ----------
+capabilities:
+  tools:                               # 必填，所需工具/平台
+    - ""
+  knowledge:                           # 必填，所需知识领域
+    - ""
+  context_requirements:               # 必填，运行时需要的上下文/权限
+    - ""
+  runtime_conditions:                 # 必填，运行环境/依赖条件
+    - ""
+
+# ---------- 字段域 8: 评价标准 ----------
+evaluation:
+  metrics:                             # 必填，可量化的度量指标
+    - ""
+  success_criteria:                   # 必填，成功的定性标准
+    - ""
